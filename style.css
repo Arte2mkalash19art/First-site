@@ -161,3 +161,16 @@ input:focus {
 input:focus ~ .input-border {
   width: 100%;
 }
+
+.card img:hover {
+  animation: colorChange 1s forwards;
+}
+
+@keyframes colorChange {
+  0% {
+    filter: grayscale(100%);
+  }
+  100% {
+    filter: grayscale(0%);
+  }
+}
