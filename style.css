@@ -1,12 +1,29 @@
+.container1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: cursive;
+}
+
 .card {
   margin: 10px;
   width: 300px;
-  border: 1px solid #ccc;
+  border: 1px solid #a09d9d;
   border-radius: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   transform-style: preserve-3d;
   transition: transform 0.2s ease-in-out;
+  flex-basis: calc(80% / 3);
+  flex-grow: 0;
+}
+
+.container-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 150px;
+  margin-top: 30px;
 }
 
 .countri {
@@ -22,13 +39,11 @@
   text-align: center;
 }
 
-.countri:hover {
-  filter: grayscale(0%);
-}
-
 .card:hover {
   transform: scale(1.1);
-  transition: transform 0.2s ease-in-out;
+}
+.card:hover .countri {
+  filter: grayscale(0%);
 }
 
 body {
@@ -162,10 +177,6 @@ input:focus ~ .input-border {
   width: 100%;
 }
 
-.countri:hover {
-  animation: colorChange 1s forwards;
-}
-
 @keyframes colorChange {
   0% {
     filter: grayscale(70%);
@@ -175,21 +186,14 @@ input:focus ~ .input-border {
   }
 }
 .medias {
-  width: 71px;
-  height: 19px;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 19px;
-  text-align: left;
-  margin: 70px 95px;
   font-family: cursive;
+  color: #c3c9c4;
 }
 
 .medias:hover {
-  color: #03a9f4;
-}
-
-.mefa:hover {
   color: #03a9f4;
 }
