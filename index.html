@@ -15,8 +15,13 @@
   <!-- shift alt стрілка верх або вниз після Видівлення тексту продублюється -->
   <!-- Створити десять елементів любий тег*числоякщо потрібло дописати атрибут до тегу пишемо>і атрибут -->
   <header>
+    <!-- Кнопка для зсіни теми -->
+  <label class="container" width="25px">
+    <input onclick="changeBackground()" checked="checked" type="checkbox">
+    <div class="checkmark"></div>
+  </label>
     <!--навигация -->
-    <div class="container-nav mobile">
+    <div class="container-nav mobaile">
       <span class="medias"><a href="#Europe">Європа</a></span>
       <span class="medias"><a href="#Asia">Азія</a></span>
       <span class="medias"><a href="#America">Країни Америки</a></span>
@@ -24,14 +29,6 @@
       <span class="medias"><a href="#media">Контакти</a></span>
     </div>
 </header>
-<hr>
-  <!-- Кнопка для зсіни теми -->
-  <label class="container" width="25px">
-    <input onclick="changeBackground()" checked="checked" type="checkbox">
-    <div class="checkmark"></div>
-  </label>
-
-  <!-- Зміна теми закінчується -->
   <h1>Країни, куди може поїхати українець</h1>
   <!-- Починаються картки -->
   <main>
@@ -41,240 +38,348 @@
         <img class="countri"
           src="https://static6.depositphotos.com/1036813/646/i/450/depositphotos_6467244-stock-photo-hallstatt-view-austria.jpg"
           alt="Австрія">
-          <h3>Австрія</h3>
+          <div class="content">
+            <h3>Австрія</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAACnCAMAAAAPIrEmAAAACVBMVEXIEC7////aYHQhaz+vAAAAd0lEQVR4nO3bMQEAMAyAsG7+RVdGDxIHCGAGAAAAAAAAAAAAAAAAgHs/a16W9CLpRdKLpBdJL5JeJL1IepH0IulF0oukF0kvkl4kvUh6kfQi6UXSi6QXSS+SXiS9SHqR9CLpRdKLyp8bAAAAAAAAAAAAAAAAAPcWygI5n7oJxE8AAAAASUVORK5CYII=" alt="Прапор Австрії">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://st2.depositphotos.com/1736195/6062/i/450/depositphotos_60624829-stock-photo-city-of-andorra-la-vella.jpg"
           alt="Андорра">
-        <h3>Андорра</h3>
+          <div class="content">
+            <h3>Андорра</h3>
+            <img class="prapor" src="data:image/png;base64,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" alt="Прапор Андорри">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://st.depositphotos.com/1290698/3897/i/450/depositphotos_38979393-stock-photo-gjirokastra-albania.jpg"
           alt="Албанія">
-        <h3>Албанія</h3>
-      </div>
-      <div class="card">
-        <img class="countri"
-          src="https://st3.depositphotos.com/9724140/19209/i/450/depositphotos_192092988-stock-photo-aerial-photo-of-minsk-belarus.jpg"
-          alt=Білорусь>
-        <h3>Білорусь</h3>
+          <div class="content">
+            <h3>Албанія</h3>
+            <img class="prapor" src="data:image/png;base64,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" alt="Прапор Албанії">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://st3.depositphotos.com/1008154/19540/i/450/depositphotos_195405144-stock-photo-residential-area-city-veliko-tarnovo.jpg"
           alt=Болгарія>
-        <h3>Болгарія</h3>
+          <div class="content">
+            <h3>Болгарія</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAACgCAMAAAAFBRFXAAAAG1BMVEX////WJREAl273/f1rrpEAkmZPiGTFNyHZIA3+M4oZAAAAoUlEQVR4nO3PgRGCAAwAsQKC7j8xa3jfZIPMAAAAAAAAAAAAAAAA/KFrmfksM/cycy4jXCdcJ1wnXCdcJ1wnXCdcJ1wnXCdcJ1wnXCdcJ1wnXCdcJ1wnXCdcJ1wnXCdcJ1wnXDfPMvNdZn7LzLGMcJ1wnXCdcJ1wnXCdcJ1wnXCdcJ1wnXCdcJ1wnXCdcJ1wnXCdcJ1wnXCdcJ1wnXCdcN0L65yuYVNpI2MAAAAASUVORK5CYII=" alr="Прапор Болгарії">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://st4.depositphotos.com/1000528/39057/i/450/depositphotos_390571812-stock-photo-view-of-picturesque-dinant-town.jpg"
           alt=Бельгія>
-        <h3>Бельгія</h3>
+          <div class="content">
+            <h3>Бельгія</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALkAAACgCAMAAABnqj09AAAAElBMVEUAAADvM0D92iWOehTuI0H0gjaxVUKIAAAAlklEQVR4nO3OwQ0AIAgEMBTZf2WHuIRXO0GrEn0T804gipubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm6/MPxpAeUHhF3tjAAAAAElFTkSuQmCC" alt="Прапор Бельгії">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://st4.depositphotos.com/37258556/39447/i/450/depositphotos_394475972-stock-photo-neum-bosnia-herzegovina-july-2020.jpg"
           alt=Боснія-і-Герцеговина>
-        <h3>Боснія і Герцеговина</h3>
+          <div class="content">
+            <h3>Боснія і Герцеговина</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHsAAAA9CAMAAAC6GOY8AAAApVBMVEUAI5X+ywD///8AIZb/1QAbKZMAAI4AAJv/0gAAIZQAAIoAGpP/zwAAHpQAF5IAFZIAEJEACpDr7PRNVqf4+fzj5PDCn0m5mE/luSmrr9LGyODQ0uaQlcRrcbMAEpjSqzy6vdrKpUKGir+wklWmilt0erfX2ekmMI8SKJcsOZxka7BbY62gpMzgti8ACZl9g7xBTKPasTQ1QJ4AAICdg2CUfWWNd2kNzIhOAAADy0lEQVRYhb2Za3ebOBCGp1IQkVSBALlbbi3rLa4JrO11L///p+0MTrZ7mvgCBuaDk5yT8OSdi+aVDfAqxIYxtlL0rQb+9eP7d6PjweOvn38h+JaxjLHGANhSgzF3wIeybcGeVOu6CHSbCwDDx8MHs9NtCGGQhiBStpUIt6PhQ9lg6feNEkrFmAElgvFpH8ymkDJzccwYvsStNp/+HgcfxQYZdayPzTHELITj4OPYIEVC6FQY+skEo+Aj2aB7doWdDlwC342Bj2Vjl2c1cyGHcJ8Y4GOUj825jdcqauI6AJHjsKPyfwbDx7KbBIEmaq0WeMJqjd0+GD4255KazBye2rZgrGzbshkOH8vug0PGnqPTcnDa72IDF3VPjpO+4e0w+H1s7PeS2IAnDGC3+4Pgd7Mz5hgrLBUf9/mnzwPgd7IldrnXuhWmXG00Hwa/kx3UeKyGNjsYc2RlgDX3Pz8upbuJJLVcINSaVUoIi8pvhd9b7/6vw31WVTFzVZV1+nbl97JP6sPiecwrgzXf/XkbfBI2rVS0EsyVgp7Gd7cpn4aNXZ7TEUNorkH6NymfiG0aNBKOtTjiXo3wm9I+EdsWLlHeCr2EbunicJPyydgyACOKqLfO+Ei5+3AVPlW9LY45SKXUt5it8UvAryufik0hZfWyUl2ppX9N+ZRsHLXa9egcLy/X0z4pGyDyCF4pQ1m4pnxitjn0sqnTib774xJ8at0dSxNHnR7sSzpkLimfmC1WJe60DL2EyOniIP0Lyqdly6axtFIPkdUuFmEYmgtpn1j3s3Ve1zVeFtf1fn0055VPzD79A7p7mfMixLT/dQY+BxvL3q9UtjqSdT5b83nYED0R+4DFR+sMZ5TPxBYVc46lEV2Wz8LnYUvDcu5tnKCpw2F/u+bzsPVTJ4wRaWKMx9aUef/La/hMurcRvYqIrHNO1vkt5TPVm7Y5Xhw2eY4Nn+eb1Ej/y8My7FNE5WmlYtPJN9I+Kxss0Du/LhF9Hn5XPi8bNwrJ7l27fqV8Xra0eKzGrEYXQz7yN/i87LCIj0JUGwEmcZR4//vDYux9pMnFbY3oWBJwzv3vjwuxIeibrPE8vmKp8Zoj/5/ymdl92P9WqsNL0y/lS7BBHOLTDTkIAH7BF2GDVifr3JtX8H88LMgm6+zYCjtdeluCPy7HRuvceRt2MHjG73HYT8qXYdtNK4zqUrTOGX26BP7Px6XY0NAbj8ITkcITNoqsobQvxO4/XDp2XZFiyxVddzCofCF2H2H5Mud1QGlfko0rtX/PO/fIRcHux9dL7H8BL+hJdOWI17IAAAAASUVORK5CYII=" alt="Прапор Боснія-і-Герцеговина">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://st.depositphotos.com/1026649/5138/i/450/depositphotos_51389835-stock-photo-piazza-san-pietro-in-vatican.jpg"
           alt=Ватикан>
-        <h3>Ватикан</h3>
+          <div class="content">
+            <h3>Ватикан</h3>
+            <img class="prapor" src="data:image/png;base64,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" alt="Прапор Ватікана">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src=" https://st2.depositphotos.com/1001146/5906/i/450/depositphotos_59062709-stock-photo-london-aerial-view-at-night.jpg"
           alt="Велика Британія">
-        <h3>Велика Британія</h3>
+          <div class="content">
+            <h3>Велика Британія</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAACWCAMAAADABGUuAAAANlBMVEX////PFCsAJH2ir9AVNogRM4aRocf8/P3N1ObGzuLu8PZvg7YDJ39eda3p7PQ4VJoxTpZle7D0mZB8AAADEElEQVR4nO2d21LDMBBDzb1cC///s0BnGA9QknglrUu1eqRunUNO08SJva0tZbe/ZKR/4MViejtKt6/3i3BrubombMMU9JvbO4i8tYfHp3+J/vwCgn8Gtz4fHXS9B7U+Gx13vQe0Phmd4noPZH0qOs31HsD6RHSm6z1x6/PQya73RK3PQhe43hOzPgdd43pPyPoUdJnrPQHrE9D3Ozn4Z4atl6OrXe8ZtV6NnuB6z5j1WnTpcf1YRqxXogOuhw8PL2+brdehP72FXd814Iuy2XoZetz1j8NVg5TZaL0IHdzwBv/zpqGjujbOx+Sj47vrqxOp9Xx0xub2ToTW09Epkjb2Byagk3bSt05U1lPRaRv5oxON9Ux0npq/OlFYz0Nn7prfnQisZ6FzN+1YJ3TrSehkIXM6YaDzd8hRdLZaOLria3j8z+QDCowuOfj+9QL1ZwREF/3k/o1OPHmA0GUnWguv8U4ZEXTd6fXiq6wLhTi68qJqBZ1zeRhF115KrzWgDAoE0cUDKOtNCENBIXT5sNkWdHgAMICeMFi6qRU67DuOnjFEvrEdZP04utj1QXTK7cyt6NEM3Q7b3pRxY0+LPngTdKQxfjtXiT5863sMHbVeiD7+wMNge9B6GXrkMZfhd0DWi9BjDzcF0AHrNejoI20pEX7XTz2FXuiFXuiFfq4p9EKfjL68MeecQndMoTum0B1T6I4pdMcUumMK3TGF7phCd0yhO6bQHVPojil0xxS6Y5zRT+m+bvLG5KbQC73QC73QzzWFXuiT0Y0ngATeYzvtx3ayl+8UP9uJnbbTeX0ncdtO3bddsMF3mQ7bxVlsl+TxXYjJdvkt20XXfJfas11g0XZZTd/FVG2X0LVdONl3uWzbRdJtl8b3LYhgWwbDtviJb8kb20JHtuWtfIua+ZayMy5gGM0ZlK2MxbZYqW+JWtvCxLblqH2LkNuWng+4noguPNaHXE9FV1kfcz0ZXWF91PVsdLr1cdfz0bnWA67PQOdZD7k+BZ1kPej6JHSG9ajrh8xAR63HXT9kCvqq9e+FGY05HXy3TAAAAABJRU5ErkJggg==" alt="Прапор Великої Британії">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://st2.depositphotos.com/1027484/6874/i/450/depositphotos_68741123-stock-photo-white-architecture-on-santorini-island.jpg"
           alt=Греція>
-        <h3>Греція</h3>
+          <div class="content">
+            <h3>Греція</h3>
+            <img class="prapor" src="data:image/png;base64,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" alt="Прапор Греції">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://st.depositphotos.com/1006362/5128/i/450/depositphotos_51289625-stock-photo-ushguli-village-caucasus.jpg"
           alt=Грузія>
-        <h3>Грузія</h3>
+          <div class="content">
+            <h3>Грузія</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAACgCAMAAAAFBRFXAAAAaVBMVEX/////AAD/3t7/Ozv/MDD/19f/7u7/+vr/Ghr/vr7/6en/RET/ycn/Fxf/o6P/w8P/rKz/sbH/Cgr/Z2f/iYn/mZn/NTX/hYX/jY3/ISH/0dH/5OT/KCj/Pz//fn7/VVX/t7f/k5P/d3cN6Lz7AAAEHElEQVR4nO2d65KiMBCFFUUMhAQvOArqOPv+D7moJLC1jtDaJpD0+WVpNTmfRZHQge7JxIzC+fSp5qEhI6ZEwARs2yGyCJiAbTtEFgETsG2HyCJgArbtEFkEPBJgJi6MV2IXwUGByMC88cFAgVDtD/NZUmm2O+SgQGTg/LC7+5gf9qBAqDLtMBWgQGRgkerIFSgQqkCPM7uAApGBLzsdWYICwdLjfMMcIgOH3zoSFAeXPpU2MSgOGTjeqMAlKA6ukxroDIvDnpb+qMAEFgeW/me/YHHYwF/6TIPFgbVXAwFnA2zgV32AJepxUtg0jA6cq4sJbHbsqaj5yOpxDuLhz78KBbg1kDjUgezhz++pEDxeLBbR9YCFMnid76Oo+jrmedB9DAzgIG98ZOp4YeNDFO9xaq2up3Cy2QpWlBpYlAXLtpvkemr1GAgDuKh9ZJUPoY5XWWKi9oG16GLH52anPaZkDOC4w8YR6z5C7jpGWnQfAwN40WFjJt9nvUnOxgF8gt2x/i6ejAM4IeAXxU8dIw0EGO2UHstFa4d10WpPS+rjOl03X5qflprh296wpqVq4bFMNud8xZhUOZ7jXjK2ys+bZGly4VH5+Lr52CvQrOUDa+ERZpKHQXxbqobK4O3gURyEnIseWRYM4FJw7WPVXlrefcgMK9Ubdd089Fi1YwBHj24eLjAfYA3u9jCDxYG1VQ59SQB4l+LRiy67SbzIWBJvqf/ZHquNlkabptUOv2HphbEm4ltbLbBlzee2Wnrkl97QSo+z9GMz7TxN02WlNJ3+gAKRgX8aH8DpAiiZ8TCOF3HAM7sb4hkPKhtxyDOsWyRkjfWRh5dFwARs2yGyCJiAbTtEFgETsG2HyCJgArbtEFnDAQ7MqOuxiSMrzRiZzMxovn4OvJ4bMjJ57sM9EbDrImDXRcCui4BdFwG7LgJ2XQTsugjYdRGw6yJg10XArouAXRcBuy4Cdl3+ARvapRzOdqmZbegeG+KGjJh60GA4jzwYEgETsG2HyCJgArbtEFkETMC2HSKLgAnYtkNkjRX4/jptXIb2X6cNy9jA67TevTDt3Svx3hU98K++tHeFS7wrTeNd8SHv6kurmnhOFxBrl1671OMMpkScfPz7W+ooAijNFQGUZooAVsur9PRbmcdTarLMo/bxX5nHq49P1Jf2opCnd6VavSvG61+5Ze+AfSuZPpaLFlpRfO/aHlzzOstrYwtZlFIZFGUobTW2kOE/jS0kdmOLQbcuKSb4rUu8a07T1uDqS3+k/VBL3iUAvEvxeNckzrs2gNqhJ4n4Abby/OxWi3fNWrd1G9yT/Xa8p7ot8GfnpXvD5YJL+w2XZWXj8w2XX9ZYH3l4WQRMwLYdIouACdi2Q2QRMAHbdogsAiZg2w6RRcC2gP8CAHJz+XU3J/UAAAAASUVORK5CYII=" alt="Прапор Грузії">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://st.depositphotos.com/1035350/5012/i/450/depositphotos_50127043-stock-photo-copenhagen-denmark.jpg"
           alt="Данія">
-        <h3>Данія</h3>
+          <div class="content">
+            <h3>Данія</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAACgCAMAAABDs7L9AAAAJFBMVEXIEC7////glZzGAB/HACXXbXjsvcLFABLWZnLGABbos7j02t3A0ss3AAAA/ElEQVR4nO3YyxGCUBBFQVT855+vCeAGXiHH6g5gas72TtN28/W06DYPOP4roipEVYiqEFUhqkJUhagKURWiKkRViKoQVSGqQlSFqApRFaIqRFWIqhBVIapCVIWoClEVoipEVYiqEFUhqkJUhagKURWidnHZ7v74EvUccHyN6TzAaznqPeL2GtPyP22iKkRViKoQVSGqQlSFqApRFaIqRFX8Z9SISepwE9mA7fB4Y+YAx5udBxBVIapCVIWoClEVoipEVYiqEFUhqkJUhagKURWiKkRViKoQVSGqQlSFqApRFaIqRFWIqhBVIapCVIWoClEVoipEVYiqELWHD6h1L7mQan5oAAAAAElFTkSuQmCC" alt="Прапор Данії">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://st3.depositphotos.com/1035449/16965/i/450/depositphotos_169654586-stock-photo-aerial-panorama-of-old-town.jpg"
           alt="Естонія">
-        <h3>Естонія</h3>
+          <div class="content">
+            <h3>Естонія</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAACfCAMAAADnCzTmAAAACVBMVEUAcs4AAAD////xir3pAAAAkklEQVR4nO3PAQ0AIAAEodf+oa3hdtCADQAAAAAAAAAAAAAAAPjNyVIvUi9SL1IvUi9SL1IvUi9SL1IvUi9SL1IvUi9SL1IvUi9SL1IvUi9SL1IvUi9SL1IvUi/azVIvUi9SL1IvUi9SL1IvUi9SL1IvUi9SL1IvUi9SL1IvUi9SL1IvUi9SL1IvUi9SL1IvUi96HXKbR4fd6OwAAAAASUVORK5CYII=" alt="Прапор Естонії"> 
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://st.depositphotos.com/1766887/1902/i/450/depositphotos_19025307-stock-photo-sunset-in-venice.jpg"
           alt="Італія">
-        <h3>Італія</h3>
+          <div class="content">
+            <h3>Італія</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAACgCAMAAAAFBRFXAAAAG1BMVEUAkkb////OKzcAkEJLqHDP69z219nNJTLYXmZ/Eir2AAAAuUlEQVR4nO3PSREAIAwEsHLjXzEemH0mDlIVNeZqUfueHpX9CgsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLC397fCWm4YE4MZ4AAAAASUVORK5CYII=" alt="Прапор Італії">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://st.depositphotos.com/1766887/1797/i/450/depositphotos_17974117-stock-photo-toledo-over-sunset.jpg"
           alt="Іспанія">
-        <h3>Іспанія</h3>
+          <div class="content">
+            <h3>Іспанія</h3>
+            <img class="prapor" src="data:image/jpeg;base64,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" alt="Прапор Іспанії">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://st.depositphotos.com/67903508/57971/i/450/depositphotos_579710830-stock-photo-aerial-view-colorful-houses-village.jpg"
           alt=Ірландія>
-        <h3>Ірландія</h3>
+          <div class="content">
+            <h3>Ірландія</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAB9CAMAAAC8h45vAAAAD1BMVEUWm2L/iD7///+y3sv/1792R6+GAAAAmklEQVR4nO3PQQEAMAgEIHXrn9kS5w8aUJX3Ju533sFcXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV09bgH8jHwHxfNcfQAAAABJRU5ErkJggg==" alt="Прапор Ірландії">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://static9.depositphotos.com/1028580/1094/i/450/depositphotos_10944395-stock-photo-downtown-reykjavik-iceland.jpg"
           alt=Ісландія>
-        <h3>Ісландія</h3>
+          <div class="content">
+            <h3>Ісландія</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAACtCAMAAAC5mwKJAAAARVBMVEUCUpwBUpzcHjX////bDyzhTVsAS5rDzuD20tTcHzfYAAD87e7r8PW7yt4AK40AOJEANZAAI4r4+vz98vP0xsr53+HiVWL6nF67AAAChUlEQVR4nO2b2UoDQRREJ4tLonHX//9UfYiIRIaMdSF1u07hg0FI51DnzqSHdlpNq+PPz2+LXq8e7jfH3O1369/Z7b//tjk8rv71/sWvJzm/gNezwPpiBYlrGGAJeF5pC2B9Js5vWF+sIHEN1wI3mGFdEZT2bhilFyuC0t4NxykdB6zPBLsl74ZrgRtctHRFom9LKD06cIOG9ZmInmGU9gPWFUFp74ZRerEibB68GwZYAm5w0dJnIvq2hNJ+wLoiKO3dcJzScQ3rM8FXS++G44B1RVDau+E4YF0RlPZuGGAJeF5pC2B9JqJ3Sw0argVuMMO6Iijt3TBKL1YEpb0bjlM6DlifCXZL3g3XAje4aOmKRN+WUNoPWFfk3Iaf9LUqci3n+UzgB32pgkw3cg4vZyl9f9CXKsi0KcxswyYBWMms0iahYSU0DPDlUwr82kHp28K8nQCv9++VCxRkuqrM9gR4+1G6gJ5pW5kT3i9is0x/fMahA/DoAXj0ADx6AB49AI8egEcPwKMnbz9c+jihwxOPyudFLZ5pVT4RbPHUsvLN4p5LBwKjNMCXDkoradGwfi6m2Ske/eRTs3NacrqdxIs7a1kL3OA0ra5I9HlplPYD1hXhv1q8GwZYAm5w0dJnIvq2hNJ+wLoiKO3dMEovViRa6QYN1wLHzXADYH0m2C15NxwHrCuC0t4NxwHriqC0d8O1wPMNDwjcoGF9JtgteTeM0osVQWnvhuOUjgPWZ4Kvlt4N1wI3uGjpikTfllDaD1hXBKW9G45TOq5hfSaiZxil/YB1Rdg8eDcMsATc4KKlz0T0bQml/YB1RVDau2GUXqxItNINGq4FjpvhBsD6TLBbsm74E8KeD4io2wj8AAAAAElFTkSuQmCC" alt="Прапор Ісландії">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://st4.depositphotos.com/19085394/23654/i/450/depositphotos_236547298-stock-photo-kyrenia-cyprus-august-2017-view.jpg"
           alt=Кіпр>
-        <h3>Кіпр</h3>
+          <div class="content">
+            <h3>Кіпр</h3>
+            <img class="prapor" src="data:image/png;base64,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" alt="Прапор Кіпрк">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://st4.depositphotos.com/6105212/19867/i/450/depositphotos_198676354-stock-photo-aerial-view-peter-church-riga.jpg"
           alt=Латвія>
-        <h3>Латвія</h3>
+          <div class="content">
+            <h3>Латвія</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAB9CAMAAAC8h45vAAAABlBMVEWeMDn///+ut+dDAAAAVElEQVR4nO3ZMQ0AMAzAsI4/6VHoN02xGeTODAAAAAAAAAAAAAAAwBdOlvQi6UXSi6QXSS+SXiS9SHqR9CLpRdKLpBe9PiAAAAAAAAAAAAAAAAA7F+XSGGtzHUFnAAAAAElFTkSuQmCC" alt="Прапор Латвії">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://st.depositphotos.com/1000438/4092/i/600/depositphotos_40929275-stock-photo-panoramic-view-of-vilnius-old.jpg"
           alt=Литва>
-        <h3>Литва</h3>
+          <div class="content">
+            <h3>Литва</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAAB4CAMAAACATE3ZAAAAFVBMVEX9uRPBJy0AakT/vgwAY0cAbkbKHysqUHmaAAAAfklEQVR4nO3PCQnAAAwAse71L3kqBkdJHGQGAAAAAAAAAP53LTH3EnMuIVIjUiNSI1IjUiNSI1IjUiNSI1IjUiNSI1IjUiNSI1IjUiNSsyfyLDHvEnMsIVIjUiNSI1IjUiNSI1IjUiNSI1IjUiNSI1IjUiNSI1IjUiNSI1LzAahfZ+nxJ0uyAAAAAElFTkSuQmCC" alt="Прапор Литва">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://st2.depositphotos.com/1723045/6573/i/450/depositphotos_65736523-stock-photo-view-of-sargans-village-in.jpg"
           alt=Ліхтенштейн>
-        <h3>Ліхтенштейн</h3>
+          <div class="content">
+            <h3>Ліхтенштейн</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMcAAAB3CAMAAACAEaSBAAAA/1BMVEXOESYAK38ALIPVDx6NIFkAAAD/2D3/3D7evDX/2j7UtDKylyv/3z+pjyjqxjivlSqjiieZgSS9oC1ZSxX00DsACyEAKYIAJYEAH33mxzgAAGjCpi9URyuCbh+PeSK3myzQuTRNQBJjVBjLrzEAFl1IQEOgizAADnqwlTjhyy4lMG4AGHUAG3IRF0iPeD0AAHANIm17aDWXiDOlizpoW0EvKzZORkIQJ2hfVEqrmjoAFXmPeTBaUU5nVyc3MloAAFREPlh0Yx5FNy5+akYsMGE3M0MyMEsVETZvXjZdTTldTSY+NDRwYigAAEkoIwr/5jZFOic6MQ5LRFQZEwYADSq3wba6AAAEJUlEQVR4nO2Za1PbOBSGibu2ZVm2ZcdNogj5pkLKJSEFtlBSCu4FaDcLdeH//5ZVskwnszt2w7CwGjjPF1+SD+eZV3evtJ4GK/93Af8R4KEX4KEX4KEXz9LDeKgq7s9dPDqv9BW5g0d3bX3r4Qq5J3fwGLze2Ow8XCX3Y2kPY2t7ONoZdx+ymHuwtMcrV77Z3cveaprI0h7b+6Pf37zdO9C0qy/fP3qDw3eDI03juFM/n6Sbmqbxaw+j1bmd/rrvhTzu3b40DM0mxUaPTrd10PrQGbd63ZbRSTDDJ4bR6XXH3c3NzmZXp7GryaP74TSUJfm4sf/pcKffm2QZ72/1P4++ZMc4CrOz99v6ZNLk0efZt/U/knO8yrx1eVZ6XHwZZdONVX4xPT5Owo1TfUTqPXrHbLXcxYhjd1d8LSdTuwglV2JiN+ASo3fiW8D7j1hqI7UexnY7mMY8SQJBRYAYn5S5KAuXsSgUNPFEwKhI/tQlkFqPLYk+OoKiFIUx9S5N4UoabJT08rqQrh+gVJb+3vTqsyYi9R7fLzI3VY0KhX4Ye8I0MQ1YZVaRizzk4QBHlFTTvuYe3Yur3Cpw9LeH7/nFJSoTXOYRCn56ZImMBo9abi11Hp3TcJWUCx5BjtOMhzTFCx7BdL/3qOXWUuvxAxf2Qh7ILbNcJJK6ix6eNzp61HJrqfVYy1btxTwoTSNWZrd5BEh5eEysTzT3aG1PyiyNlEckZKI8hAyLsMrCVBmEaSJd5UHa3oEmC+A6D2Oshtk4kVJIFrWLQpiBlBjzqi3auYcQDVEU2N/tM00WWfUeX0MatpM88yOXFaZJYzeNkGSmWXHkSacQeRLSUpcde53HESUxs7kpfI59n5eXcUqIJJip8ZfHPpLqJ0f9A2lyFlQ7f6z5USpV85lZECcuMONSIIlpqp4iwv22r7o6G2k+7rYGoyubsZhzh12mth3HTmCaObEsx5YiiZFqYnFM5JYecTSsE08s4jFELAebkW05jmO3r5HtOJbtm4l6ZnEY27pMgw3r9sEECVPalkWo8lAQtaeaXR2/JI7lsLyKMl3iaPDo/HAy01cGDuNzDyemcw9botnbOA+ILrN5437wyCXIJfMAVGtSDctR6cxufGf2EqdX1okucTR59A5t4tsKQmxVeWzNOnus+od6tmc9nwTaxNHkYexgVSzC2PVm2z/huUmSqmsQBhxhpMxONZnMW83nDL19VBZVdX1t/pPrqqrK1NVk7zGj+Rzu5b8MFtFkKp/T7DE+OK+TuBmONdL41bmoKnU8Hg7Pb17+5OZ8ODwYP051y7PMObUxZ+FWpyBueZbfnTUGPPQCPPQCPPQCPPTiyXgYT4OV354GKy+eBisAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADPlL8AT9KYcJ+YlrgAAAAASUVORK5CYII=" alt="Прапор Ліхтенштейну">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://st.depositphotos.com/1831523/1527/i/450/depositphotos_15273673-stock-photo-luxembourg-city.jpg"
           alt=Люксембург>
-        <h3>Люксембург</h3>
+          <div class="content">
+            <h3>Люксембург</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMcAAAB3CAMAAACAEaSBAAAAFVBMVEX////tKTkAod7yeX16u+YAnt3tHTAGbX3/AAAAh0lEQVR4nO3PgQ2DAAzAsAKD/0/eEUNaVNkXJHPsMP8OeImPFh8tPlp8tPho8dHio8VHi48WHy0+Wny0+Gjx0eKjxUeLjxYfLfPsMNcOAwAAAAAAAAC/+Oww9w5z7uCjxUeLjxYfLT5afLT4aPHR4qPFR4uPFh8tPlp8tPho8dHio8VHy5aPL/JcZp02YiwzAAAAAElFTkSuQmCC" alt="Прапор Люксембургу">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://st2.depositphotos.com/1040166/7933/i/450/depositphotos_79332068-stock-photo-view-on-valletta-from-sea.jpg"
           alt=Мальта>
-        <h3>Мальта</h3>
+          <div class="content">
+            <h3>Мальта</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAACFCAMAAAApQEceAAAAw1BMVEXPFCv////45+jVTlXOBiTq7+/+7e/1zM/99/fg6en/+/vn7++6VFTzxMjATU3Lk5bMnJ/u9fTX2NjAZWvPeoDMzMzFxcX29vbUz9De3t7l5eW5ubnn9PPr6+uqqqq/v7/HSlXBGh+9XV3snqPKio7TUl3SxMXJrK3DcnnjfofcXWjCysq3nqDYYm3K1NTGUVzRu77LXmaSkpJ9fHzHLzjGMkLmiJC3g4doaGi7eX/opankj5bMQE3Op6nelZr32tzQanL6JmdFAAACEklEQVR4nO3Z23LTMBAG4ApwnYYet10pK0VWSgMEDCa4nGmB938qxNSO7zNpkmX+/8LjkS7sb+S1JPvAPH6ePH128PgBBJBtQcaHQ1RDytlln+uxasjZ9OIh0xcj3ZCiO3t+DAgggACiC6J6HrmZD5BSMeTl/FVhJCea+HrxZhMP104gbwNZYsPRs6dQv3uvC1KedLlZ1Il8IiHiaAM3H/qek3Ltgtke5HB23uVsaSt2QlyRI3aWl6uej2uvhbcIuZwWfTLCcuCWrIu+pVU7XamAXKyuKoY5Wbr15IyvouvbtUHEidj8WFXO5xFxFNVC2lSIFWaKlAs+ebUQF/8ZvGttEJfrRCsktpaiJ2q5ksDpVu2IRBbykXlShcB5QNQWuyGxxnCukkQpJB7adUCmR118Cvn9W7XWkmWTqG8/alRAro9PuyzZGietUBJxpqrP+47TTwogZtzFlItmErw31EaTF40+fB761s5OVr9fvqZaYrTf8oHq5vuP9e9/t5DRz7v7wrk8r7txcX/3axN7xD3Y6m5AsR+Q/+bjAyCAAAKIAsicJw9pdEN+/7nqM1P97deMhmzEgf/sgAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIAAAggggAACCCCAAAIIIIDsA+Qv+NVkWQaH0CAAAAAASUVORK5CYII=" alt="Прапор Мальти">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://st3.depositphotos.com/1592314/19214/i/450/depositphotos_192142308-stock-photo-view-monaco-harbor-port-hercules.jpg"
           alt=Монако>
-        <h3>Монако</h3>
+          <div class="content">
+            <h3>Монако</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAACgCAMAAAB+IdObAAAAD1BMVEX////OESbNABvVVVj35OUPhIppAAAAi0lEQVR4nO3PiQnAQAzAsPTZf+YuUTgTpAnsuZaY0wF/MVJjpMZIjZEaIzVGaozUGKkxUmOkxkiNkRojNUZqjNQYqTFSY6TGSI2RGiM1RmqM1BipMVJjpMZIjZEaIzVGaozUGKkxUmOkxkiNkRojNUZq5l5iniXmXWIAAAAAAAAAAAAAAAAAAAAo+QBm6kP5gB3yrAAAAABJRU5ErkJggg==" alt="Прапор Монако">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://st2.depositphotos.com/3980029/12158/i/450/depositphotos_121585634-stock-photo-place-near-the-shopping-center.jpg"
           alt=Молдова>
-        <h3>Молдова</h3>
+          <div class="content">
+            <h3>Молдова</h3>
+            <img class="prapor" src="data:image/png;base64,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" alt="Прапор Молдови">
+          </div>
       </div>  
       <div class="card">
         <img class="countri"
           src="https://st.depositphotos.com/1035350/3327/i/450/depositphotos_33279667-stock-photo-berlin-cityscape.jpg"
           alt="Німеччина">
-        <h3>Німеччина</h3>
+          <div class="content">
+            <h3>Німеччина</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHsAAABJCAMAAAAqq6nrAAAAFVBMVEUAAAD/zgDdAAC1AADgAADmaQD/1QDZEKEBAAAAQUlEQVRoge3NwQGAIBADsArI/iM7ge/eI1kgCQAAMMbuyenJ6nG73W632+12u3/vtye3J0+P2+12u91ut9s98f4A3iko2EHJcNoAAAAASUVORK5CYII=" alt="Прапор Німеччини">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://st2.depositphotos.com/1018487/7300/i/450/depositphotos_73003659-stock-photo-city-of-alesund-in-norway.jpg"
           alt="Норвегія">
-        <h3>Норвегія</h3>
+          <div class="content">
+            <h3>Норвегія</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANwAAACgCAMAAABQZPIJAAAAUVBMVEW6DC8AIFv///+4ACUAElXi4+hXWHzFSln04eTn6e1NTnNQVXu4ACf26OrFU17BOE0AFle/MkbEUFm2ABjLYG7OcnrDRVTMz9hERm9HTnYZJl4Ue0IYAAABd0lEQVR4nO3a3U4CMRBA4e4Cyo8oioLy/g9qTJQLMOmmHZbTzTm3JO1+4aqTSam4p5dt/9tqvesumm8Wf78un2flt9wpceKAiRMHTJw4YOLEARMnDpg4ccDEiQMmThwwceKAiRMHTJw4YOLEARMnDpg4ccDEiQMmThwwceKAiRMHTJy4mzUrbv86FPe2L7+lpvRY3OF9KO7jUH5LTWlZUT8M129rLqko9RFlcPdKXDZx4ycum7jxmzZuEdHx8xr3dVyFnF1Reohoc7q0dd1pHXJ0TWke0dX/9tMu5Oia0n+fNZXEtZq4VhPXauJaTVyriWs1ca02bVzIq5D6WA15z1PHDCGTGOqAKGSGRh3thZwibvzEZRM3fuKyUXE1qxDnU6irGuUrLA0s2ZQvHzWwHlVeA4tt5YkTB0ycOGDixAETJw6YOHHAxIkDJk4cMHHigIkTB0ycOGDixAETJw6YOHHAxIkDJk4cMHHigIkTB0ycOGDixN2qbzyerX2Lipd6AAAAAElFTkSuQmCC" alt="Прапор Норвегії">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://static9.depositphotos.com/1337688/1111/i/450/depositphotos_11112387-stock-photo-night-view-of-amsterdam.jpg"
           alt=Нідерланди>
-        <h3>Нідерланди</h3>
+          <div class="content">
+            <h3>Нідерланди</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAACFCAMAAAApQEceAAAAFVBMVEX///+uHCghRoumAADmysrKzdwAKX/qYeCuAAAAkUlEQVR4nO3PgQ2DAAzAsA4Y/5/ME0hElX1BMr8l5uuAtxipMVJjpMZIjZEaIzVGaozUGKkxUmOkxkiNkRojNUZqjNQYqTFSY6TGSM2ekXOJuZYYAAAAAAAAAAA+919i7iXmWMJIjZEaIzVGaozUGKkxUmOkxkiNkRojNUZqjNQYqTFSY6TGSI2RGiM1RmqM1DwQtnLZPkxVwQAAAABJRU5ErkJggg==" alt="Прапор Нідерланди">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://st2.depositphotos.com/6588682/11434/i/450/depositphotos_114345878-stock-photo-gdansk-old-town-in-poland.jpg"
           alt="Польща">
-        <h3>Польща</h3>
+          <div class="content">      
+            <h3>Польща</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAP4AAACgCAMAAAAbzCHkAAAAVFBMVEX8/vzcEhz////e4N7eAAnJTEzq8O7WAADf5ePp6unfABK8NDTa2djf2dvFTk++MTPBUVLBLjHeAAD19/W8t7m9urjW3923AAC6OTrAJyirWViucG9JM/P7AAABmUlEQVR4nO3ca1LCQBRE4dGQCD4CEt/uf58SN9E/vu4V3FN96s5MkWJsE5xtTG/pGXJ5P41pumfz8o8/0Oj4zzZ+2y9+eoxUdPlxfFx+HB+XH8ev/DI+3j6Oj8uP4+Py4/iVv/jpMVLR5cfxcflx/Mov4+Pt4/i4/Dg+Lj+Oj8uP41d+GR9vH8fH5cfxcflx/Mpf/PQYqejy4/iVv/jpMVLR5cfxK3/x02OkosuP41f+4qfHSEWXH8ev/MVPj5GKLj+Oj8uP41d+GR9vH8ff5T+m/zgsl4/TOH4+sPlaxvHp8Q7NYbXxLzf8s4u/Fh+Wv+3r+LD8Fxt/vuG/uvh4+119On7lR1N8Xn4cH772zG0fX304Pi4/jH/p5sfbh/G7+XX8yo+mP3HS8vfao7cP48/26uvml+XHrz3Fr/zpMVIpPi0/fu7jnzbh8nf16fiw/Ph7H/+6A5e/q6/yp8dIRZe/Tx5Zfvzagz94276Mj29+/NzvrU/e/G1fx6/8aHrr4899HB+Wf8f/vh7QXHf8n3VGs/4uY1vgbH9j1YQt8IvlZgAAAABJRU5ErkJggg==" alt="Прапор Польщі">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://st4.depositphotos.com/1035350/20868/i/450/depositphotos_208685536-stock-photo-porto-portugal-skyline-dom-luis.jpg"
           alt="Португалія">
-        <h3>Португалія</h3>
+          <div class="content">
+            <h3>Португалія</h3>
+            <img class="prapor" src="data:image/png;base64,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" alt="Прапор Португалії">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://static8.depositphotos.com/1005346/914/i/450/depositphotos_9143256-stock-photo-sibiu-old-town.jpg"
-          alt=Румунія>
-        <h3>Румунія</h3>
+          alt="Румунія">
+          <div class="content">
+            <h3>Румунія</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAACgCAMAAAAFBRFXAAAAIVBMVEUAK3/OESb80RYAJ4BKUm7/0xT91Bb0rBrNCCbMsinXRCM5y0ivAAAAu0lEQVR4nO3PRxEAIAwAsLKHf8F44PpMHCQiVetn1ERz3V1S5X6FhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFvz0Go7BBCDMBcwAAAABJRU5ErkJggg==" alt="Прапор Румунії">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://st.depositphotos.com/1797024/1485/i/450/depositphotos_14858779-stock-photo-rocca-della-guaita-the-most.jpg"
-          alt=Сан-Марино>
-        <h3>Сан-Марино</h3>
+          alt="Сан-Марино">
+          <div class="content">
+            <h3>Сан-Марино</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAACWCAMAAACsAjcrAAABtlBMVEX///9etuQ5quCh0OyUu3mMvNdljVzZnzGVxOCk1PFgu+rcoTK6lCagdST4+PiOv9pTdEvj4+Pr6+uqhyKTdR2OcRxZfFFtippycnKXlpWtra38yDKjgiHbrizy8vKneiaWbiLNzMtJZkK6iCrjpjGEhIR6enq7u7uNjY3Y2t3stDNwZEitsLevnGuUbAC3tLGsppnntimNaCZnRgDRpSp7YRnEnCaBXxtVSi7Sr1jSrUyYZwCsfByfop59ajx4VhxUgUp3qsdziG5AZDhkZGXLjgtid4E/WTpVpM1Pj6V3n2eZfDKGrXBPT090e4NSb4Ath7JgaHKNmqKih1SuegDCs6TEqICZgF+Rc0epjUqSinq7k1WbjnG/spSpnoeMbTWBeGVMPheFXQBpVytbRRNpYlQ8OjwAJQBKNQUsIAA9bDEAMQBDUUCJnIUeSRJYaVUkGAkvUCd6hXhmbzs7NSOZtMNBWmkbLBgbHB0gOxYsQilUUioPVXIAKjoAGgALbZVYhXE3WlBCVxYcSlMyPQBGc3ElQTpJh40lLwAJAABDGwCSilwoZHUAP1z3sw5Depfd078yAABxKBYCAAAPGUlEQVR4nO2ai3faZpqHwQ4yFxlLXCSQxEXCIKnBJkoBu7UVg5EtEQeQsTut3TQXX7JpNo1jErtTJ7MxdXFmJrTq/sf7fpC03bN7ZruLZsE9/I6NPkvi8D5+rx/gcIw11lhjjTXWWGONNdZYY4011lhjXXGR5LAtsEf+rS3/sG2wQ/743Fz8j0Dy+fZyavuP4JPP/vTll3/6bNhW2CB//PMv/hCh5WCiUWbYNtihQBRYAsO2wgYFIrwc/UOAFHZ2kn+ElrjLgnaHbcXA8vNfFj/6qPglf+Xr1mdLK8uplb0bw7bj/yj4/5N83J/NkFuF0PXrXGGLlLL+OE/2Ll0dkdmsuHvv7ldzO/PhQvDevWAhPL8z99Xde7tiNnuVEr9+C8eD3Pz89vxebm7+xo35udzefHB+ngvixXf1YVv3+8UHlTA3nbx5/zrjd+T2GGYv5/CrD+7fTCaXw0qQH7Z9v1N+8SEbDG6J8vtsWPj44714/4osfo5z7EPmauRJILsRC+31e7k/SjoO8/nrDjLaNz6wF4rtXJU04QsKvg0+IOOOqDInh1gWl+cU1RGXHY74PK6ExWFb+HsVYcPzu35HeFndYdkCm8/DA4tHuT3o8/NhNjJs+36v4s1ijFu4l82z+ZiSZxEIm1eUIpvP7i4EY/mrElkOP7PP4iElqMQUFszvgRRhGYNToSC7z8SHbeHvFh+KcYrCxvAYXuBChUKIK8AyxioKnueuSvVFkgrBfAwvcoUChxfxILRBHNbBIh7LBwvpYVv3v1Cc32GDXDiM58PB2E28mIwFw3k8HOZwdoO/OoGFFC8EQxwexrlg7CCcPIgFe3+E8PCV2yseclwxdJDH8XwwHA6i40GoyAWv3g6L3ysWwjgeCodCHBeCA46HC8W9q1J5f6PPCpDsC9PJ95peWOCKhav4Rh2PLySmpxNAMo1+0XoBvyqlV/7NMru4AAipxHulAGdhMfvrHaTsH9khWH70fuFn7n7yKc4dHCxMLy0tg5aWlhYODjj800/ufpjhM6stdWiW/mPxwr/0F+StmIJD1VJCjzU1uguKqumvQ0qR43Aldquf8PITino6kqHGV7B/7S1Ejg1CWCVXQmxiauuzwM8/B37+fJtjQyvoZJDlemM8AsFaI9hWZILAnqIFzynTvQRP3MTzqdm1L7bXttZmU3l8oZ/40/3NbvwYI7An6kjlCXqz3f9NBStJaLHFgrGJg9DBwgGnLKRS24mptVTqpsLBifBBInEzwd4H8/3PMEwo5YZt+2+VOfKjBCEwAQXKrsIlE9PPWZZNLnCx5N7+5hf3N/f3FhR8IQknn08nkkHlAdxICkDyDMoYmR4Nt8iUAKGSO8aoHFglB2PJRDLxkFXYFTA+GSlPluEns4IrCytw8vE0XI4F0a63RWFEJSCS6Sej4RcGq9xw+KNESZVrAUda4aD3LX+tsPmQEls8mXHPgNwz5UVFCeVZ5etlyBNOQUEYbz0pHfFrOwSxOgq7eP83JWJV9h9VcjLxjAxsKSvTicR+OQKb20/XXTMuV+/XNTNDf6ooea18C5r8irJFBnj4UY9qUxsU/A9GILgCq5jwYoev8SRFPYuLeTyVSiXpGRdN00Yfg6bLvUUZTrlm6D0oBcG8yD97ttqKqy+vP4WcH4XWCCD6xk+LEhypZ44bSnLWN/tFGaLJVS73oooWeb6MAsxdLoNjyreSULmUG/5nFIGtqo8WMYwotYbuET+EFiZQB5qslgis5Z8DkKnZ9Um3u1wXoyduUFrbDNBwwk2rYtPtnqwvJadvKnPxVgm54lACHmr4HT4tOnLInpq8ShEVktwopny+NXCAq6k2yRPkh3qNPnUjf2QlnnfBcXsqlSpyZK/8rqppSsBWhw/SqvD+FlVRM2KFoHIOMshNTc0uoeymHzXqJ5AbM7RK97K9XH9E19FqadY3xW2TDgZcUTlcJKijERhUWhjBB46P0+rqk4oowyYEgeyj3D7JnJZdPYnZ/rGpNdCZmf3ZqalQEfUe+BdkFp+26vL//EL/dBAKe8IHaofMt2m/WPPn8iEAOfRARpTlJsqQycnJkyY8oBzpp8qkBiDTeb5W0eXokaZJd2fn/I5hfzlChclPcPB/lkiH+N1Z4EZ+GkAiiMDdZPocnjLt6ZHMMD00dwRAErEbaglCMk7WIl8sfxXgj4bcE2WCokpiHHZUjK5/G9jNJyDX190QQVC2kP2eSfc67XL3lnSzd2F9zTeVyO+KTzCCkhzS4cGhtEpVht3cWyUBqm4tzevCmY5ApnxrNNgLjih7kDu0RqauNV0IiXZ74IqbBpDl/IP4KnSQCnN8yEdh6KKGPm+tVohV/uhpS9CPW/7d/HIPxA3xtJlu1F2eplqTpGigDCdOI+vNMqRPH2TXD40EE3QM+xaAqOG3kriq6xpBnOlnOu/YzXMIZNLjitQifIYve+g0E+VJpuzZjGrRtJgGLwGID0AcPGqJFEadYbBX/Ga4JZiM91BgL3Km67s8TCi90PJ4yirYzYD9ZUlNM2R9EkDSGiNLHkgVAEnE7sEzX1WeAgh2RmClgR0yMZBe/2ViwkzOwy5X1xvGv01Y+fcgrlpOhZYHqdKIRnJS2eOho3zaITf6IFB+q2/emE7jHLwBzz5vD2bHxITDOZCq3wtVM8XBuCRYzvb3hlFEDTEC1palWlRqolKlpdUo5L17M1Jj0lCPPaj8cmvGxQ8/tK0ORhHt867ZHcwOp3MwEG+VIKhutQPjEmFYpVLV2A72GuLkpKuWzognCCQNuYFAGpImSgjkEECC28alAIVOAI+8fdMRjocMYlIEhXUMAuwxIdqtia18yje71wOpiRKNQCBHRASynonwGgLZm/Wl8jsT1jEU7KcYcdRFyW56hwmCYlzASt1zATu3wJyqs4X2I9suz6RLizBRBLIeUR9pPZC0JmYAxLXkm00qLWdDF3S9Wz3uQO3F9MHsGBjEa0ErwIhTgnjbwCjIEUuZ9k2tVT2TMxEtrfVDK9MHqWc0CUA81SmfL6TQXmdH0M/OXl+cAwfVHdAhg4I4nR0M07FO+7j6FiMI40fzU9iQoGx31aTo8x6IFKn1cySa0SC0PBmIrGLR9HrNvwr65eKpjhHfW4OaMTiI9y2FVQjjwqpix9XLS/MBO+3z7big/kbSf0Mg6wzDkzQCSUdqmtvj2vL5ptnrTu/eO6Pbvrz+2rIM76D+GBzEMLxG9W37wtq0Kh1L16tvFDzlS9EeF6S2CiDuzUyaR+3DXZcyULU8NFzGlTeGd2l23zBrL98azqoxMMfAOWK0O5Y54TSsx40Lo3smdCe4WMq3tjtJRyXZkYWZSxXTjJx1eWYijOTgXZO7a75ULGi0jfWb9822QAiXbf3p4CSDesR7CZPfk3bVWf27tVZ8KTyFdA9O+ZYhRSKMmJnx0DUBOrdAu+kI9BGGdi37poJsowN5Yb1so3ERuklnBEAMKJ4UVnpraKdT+JlwbBihWMK3FjlqHQmrq3T5CEO6fWf1FJ345iiDHLJhwLDYMc+BA4NxszJwX7ch2Z1V2Ewgs6xvNxsIxEtDlswuCz37b8OVPsk1GGPggC3PQobQVgnOvzkHfwCIcDH8HOmRVDCMEirtM6x9qeuWMfGODflmX723/3b/ePvatTto8WLWF2LfOc0SgVE6zFnA0W4bgxctO0C8zkbn/LxzegGBojdM3TBxBRKh5xLszrVr/cdrPRIB0kfBTSeMNphOwEPpsmtH8bUFxOkFSwxjAhlHvTUxoWop+dTsBoUcAZ5ATrndI7lNbcym8sojs2O0YReiQ0BW7cGwySPmG3DJeVuAaYWyAKfTQs3kxQdP9MKrt3yBWkjrjCp1qvrF4zMYURo2cdgA4jX/8n0/oVGZxbpHFHW722KDqSkgwa59CCoKSG6nUkG20IY9Ycd7uv/jEfiMqgw69r6XHR4x2hDtUIWJs3NC0JFLzs1VFk+lKOxDUN3pJfxyCmfvoqGdsqzF2us2ehZmQw9BsiVHjA4ULuyJXjXnhW9/fEsRperEOwVf5v4TCZWAuHpnAgbVrT1cvL5z1IGYo0pVW1xiBwjIsKyG6fRqP+0YtZenwnHHOXGk5BMbHyoXCNtI5JXWRLVC6X9+eOpcX/noE6Otw4hStcUCm0BQ5fJ6je70fvf16WHt9JHl9VpFJbjyC8mdW8tK3nIaF69eHWow8XZPtaoTVTvnyOTIB0Gu6PrZD6/No8XGy8cR2jB3lOIrqk9y+1VR2TFNuvb3Wq3WMM+Ov2t3UR+0q2jZCOI1Yet6dtx1Zn4KonG4tq+Z6zGlQPScsqHE1q3Dg5plOM3799fbcKtuw4T1q+wDsY7BNjDOW01dNxrrdLV6+rH2+pYSgyr8Iq/c//HR465RpdcbxuHamtE9FvQfBt8X/irbQMyLp9/pbQtFvGGk0TfjZT4bffD6IhTb3o6FLl4/ULO8HHA44mmz1XLC5lA4vrTrxZ225ogB6kW818iBvdGAnwnwAVn+GSSTJMmIZET0Oxy5/l3GpWVPverLRpDfJK4EIBLpjzCaJmu8CBuqRxr5tyhfQ+/wSv/ldjtkJ4izX0qhptYdDr8UlSNMRmMiMjw6ogFRq5FRDWKu/sttdr62rSANaIpOw7Sa6Os+pBjg+YwWrTFMpEZKgUiAJ3nIEX+6aZkG3NZo2PnatoaWRfJNKSvHeZXko5LKyHEQL8oBMoA+7ZQZVYrypMrH5WyzyZOWnbFlHwj0aLPZ/6iCZyTVHyDFqFqjT0RelnnxhNaiURGAGIl5/1FI00TPsUu2gXiN05PyZv97l3wunYlKUkRTVcN58dw0n59OGKqqRSQpmk7n+iDkZvnk1KYZ3mlvZ899+LA8IDJMLhrNqRHGMG51vV7zwDDgD3SOgSrcu8kf9+ds7Ih2zlpm9v3ngAG1Xq83m1Ka2XRqD9FEVTt0bjKS1GzW6br64a6sff6wOdkNGpo3z4u0iZoElC8LvW+HrDUeW04LFSs4bzZFHm7L0na8efKLbC2/aCqvVj9M5r3J/lGtn8+Nf+/9+ctdZdvm9/eyFeS/kY116R/rnw3y/6YxyKhpDDJqGoOMmsYgo6YxyKhpDDJqGoOMmsYgo6YxyKhpDDJqGoOMmsYgo6YxyKhpDDJqGoOMmsYgo6YxyKhpDDJq+g9arCKZmqToAQAAAABJRU5ErkJggg==" alt="Прапор Сан-Марино">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://st.depositphotos.com/1927453/3374/i/450/depositphotos_33749331-stock-photo-bratislava-slovakia.jpg"
-          alt=Словаччина>
-        <h3>Словаччина</h3>
+          alt="Словаччина">
+          <div class="content">
+            <h3>Словаччина</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAACFCAMAAAApQEceAAAA4VBMVEXuHCX///8LTqLuGCHw7/V4QYL6FQ4ARZ96jL/wNz0AT6X0hIXtABHtAAAAOpv//f7tAAr0jo/uDxuvvNm3xd7K1Of+9PT6zM0AQJ0ASKDvJi4ANZnxZWb83+DybXH2nZ/1lJfxTlPvP0L96uv709X5wMH3pqjzfH73ra/vLjbxXV74ubrwR0jh5/HUJD5bRIlOZqjIxto7VKGlqcmYqs6AmcZohrw3Za0AJZQALJfdGSyMYpFYdrVlfriaY43FKUq2L1nALVJFR5GnNGSXOG3LJUPbdII0PJOPVYtgbqqXnMD/D+TPAAAFo0lEQVR4nO2aC1fiOBSAe5uOSGlJCdLyaqEUlFdHRWecdcfdFefl/v8ftGkRKRBpnAM1dfMdz7Gey8m5n3ndpCjaO0GBd4IUEQ0pIhpSRDSkiGhIEdGQIqIhRURDioiGFBENKSIaUkQ0pIhoSBHRkCKiIUVE4yAi+BCNpsAh0im9mtPDJ74Jh4hvGgzMJ5gx/+B5b8EhMiXKNobntSmexwoS/+B5b5EugnuIkavpYJsCA5MRRNPsZ0m6iM0W6SyiJYsl0rMPnPY26SLBiCVCvEV0zBpaqBgcOO1t0kXcJlNkHP/TbZ8VRCMRRfpMEdRz4yCzu1DTPXjim/y2SNOJgo7CDvYPnvgm6SLsXBUyiIIT1lwXVGSQ9CDW8i9zGAVPl6svshKzHinOwRPfRDneTRUmCRHSriimaRGCkBmXIV0TIWJYpokqyfULDeA6peF9oxR20voEw0SCRoUux5OK5/vTYiSCO8Xp1PcqE7qElYyE8AQ+l3e3vG8UdSf1azhNJGiUlls23dejX7a93PrwWVJkCMeF3S3vmxSR8obI2Yu1h+0lP3cKn+rZCCxJE6lC592IWL8h0oHrHIhEdW/gxlVI4LqBbWO8MUcsKlLORmDJK0UqtjOs+M3oRFWKs4+emn5p6ASldZGqYCIn0E0kiKZjQreRaGexKpFIXMUTYplknKz2hRdREFmmmxBZDwgrUkmKJHJdF9kIdoUTuUyIEIOWJi+J0FJlVW4Z4onUViJk3G0XCS21DIMWW+ZCxESEGHGx1Wt3fZILEeMMsOsMO2de2++NRtGhHXdHo57f9kqdoeNieL5SoTXZibgixFvUVRjHFyj4qeSKtpHFNmmPhRZ53h9IO+VuRIrsg/+liPc0Ldx+33Gc+KLEpQ9O310Y2u2ciJzR02FpTA+Ho2azSbrR8lsh9HFUnPrj0iTIy6qFiqPovI4WPO8jC2i5ZRaLSFyRZImCktejjBJlVW4JWGutl/G7RRJB4UQ2Lh94RchQtKNu/XjtXotXRBnAZ7FuURo3L9z97hSJLrFVPRuBJSkiagvs4utFejZ8yST9FWkiXzTwWe9yqAi8KELGEP6RSfor0kTo+tthvSZUzIoWhlqJHTvNfNFKFSkcQ5+VrHH759ebm7u/FFZ3mS58bmSS/oo0Ef1Cw83tZMnfaiNG/cgIFnF4k/FcTxVR9Rp0n7tkeWQn/ywXJV29J+ux+I3vSdYdki5Ct0RnUXuQo6PoJ3r6uFpcdfUWrQWpUT/z7ZBDpDHTcFzVku/nNOv5PU0UzRIDR58bClLu5zR4Ho8zWu6HWQ8sDhG1dRK/KSQPepSdrn9oWt/W8tQfjm7PF0H1gZpYg8wvflUeEbq5Q5EcfdOXs+L8dr72AX3enC/NqBSZAswynyIcImqhCo55v+oEfb45cGarR/272c/8lUIEh0jjq4Z//ORsT//5A8Kb7DuERyRauGoz3uk7C9+kQ7hE1HoIVy2+9ujSEHJ+dL9wiRTuAB65/s31R4CvGZ9EFnCJqIVr0C44Bn7jQnuDvTCGT0RXaxDyfCyE6pv0BxXRuWjUNbhMG/t6i+qW+RrcO8oHTn4FcLn7+Ko3ahD84m1v3yhHvPg2XJZ3mOjlS7B97ub2DeuAx8byMdQaL874xqwG9pR9dSQY1jiA8OKFNan+GILr58KDHm97AWiPzCnfetTALebEI/pmwADwtbo1vArqFcCAMG9bxISQLkBtc3iVH2sAFSNHHvQYa3p0eP1bTnRKo36FIfBM9s2quFhkAhDe1Z9UGoW7EPCE5GZ6rEBmKQB8OYsmvd6a1TC4Z7nrjgWGcYoBV2eFwqxKHzpGDrvjCXM6xKBdXWkAwx7z1jQvEKsdfxPb8axcLVYMiDl1nKmZd40IYr4LDYlEIpFIJBKJRCKRSCQSiUQikYgLeicoxXfCf4jp5cIUlUVIAAAAAElFTkSuQmCC" alt="Прапор Словаччини">
+          </div>
       </div>  
       <div class="card">
         <img class="countri"
           src="https://st3.depositphotos.com/14847044/18813/i/450/depositphotos_188134792-stock-photo-aerial.jpg"
-          alt=Угорщина>
-        <h3>Угорщина</h3>
+          alt="Угорщина">
+          <div class="content">
+            <h3>Угорщина</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAACfCAMAAABX0UX9AAAAGFBMVEXOKTn///9HcFDOJjf99vb3+fhOdVbQMkCoI4bUAAAA+ElEQVR4nO3QoQGDAAAEsadA2X9jNPpsMkI2AAAAAAAAAAAAAAAAAAAA4Osk2EOwi2AHgb5EX6Iv0ZfoS/Ql+hJ9ib5EX6Iv0ZfoS/Ql+hJ9ib5EX6Iv0ZfoS/Ql+hJ9ib5EX6Iv0ZfoS/Ql+hJ9ib5EX6Iv0ZfoS/Ql+hJ9ib5EX6Iv0ZfoS/Ql+hJ9ib5EX7KbYH+C/Qj0JfoSfYm+RF+iL9GX6Ev0JfoSfYm+RF+iL9GX6Ev0JfoSfYm+RF+iL9GX6Ev0JfoSfYm+RF+iL9GX6Ev0JfoSfYm+RF+iL9GX6Ev0JfoSfYm+RF+iL9GX6Ev0JfoSfckLQAbfmetSJfMAAAAASUVORK5CYII=" alt="Прапор Угорщини">
+          </div>
       </div> 
       <div class="card">
         <img class="countri"
           src="https://st2.depositphotos.com/1000128/5394/i/450/depositphotos_53949213-stock-photo-aerial-panorama-of-helsinki-finland.jpg"
-          alt=Фінляндія>
+          alt="Фінляндія">
         <h3>Фінляндія</h3>
       </div>
       <div class="card" id="Франція">
         <img  class="countri" src="https://st3.depositphotos.com/16149430/18874/i/450/depositphotos_188744026-stock-photo-seashore.jpg"
           alt="Франція">
-        <h3>Франція</h3>
+          <div class="content">
+            <h3>Франція</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAACZCAMAAAAxUtf7AAAAFVBMVEX///8AL2yis8lxi63j6O9IapaRpcDmPlYXAAAA3UlEQVR4nO3asQHDMAwDQcVOvP/IXkEFCwW4XwC8nmtNdH92+47sHRQ6Ojo6Ojp6Tujo6Ojo6Og5oaOjo6Ojo+eEjo6Ojo6OnhM6Ojo6Ojp6Tujo6Ojo6Og5oaOjo6MfSL8m+m3Tn5G9kdb20XGhN4beGHpj6I2hN4beGHpj6I2hN4beGHpj6I2hN4beGHpj6I2hN4beGHpj6I01f0uO9J8/siOho6Ojo6Oj54SOjo6Ojo6eEzo6Ojo6OnpO6Ojo6Ojo6Dmho6Ojo6Oj54SOjo6Ojo6eEzo6Ojr6efQXoINATx947M4AAAAASUVORK5CYII=" alt="Прапор Фінляндії">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://st.depositphotos.com/1915353/3152/i/450/depositphotos_31522689-stock-photo-aerial-shoot-of-rovinj-croatia.jpg"
-          alt=Хорватія>
-        <h3>Хорватія</h3>
+          alt="Хорватія">
+          <div class="content">
+            <h3>Хорватія</h3>
+            <img class="prapor" src="data:image/png;base64,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" alt="Прапор Хорватії">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://st4.depositphotos.com/14883968/21302/i/450/depositphotos_213024968-stock-photo-aerial-view-beautiful-prague-cityscape.jpg"
           alt=Чехія>
-        <h3>Чехія</h3>
+          <div class="content">
+            <h3>Чехія</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAACgCAMAAAAFBRFXAAAApVBMVEX////XFBoRRX7WAAX44ODeXF0ARoDZExgASIQAOXjbEhUAPHkKQnwAPnrcERMAMHPgDw33+foAKXC/HjDn7PHf5OuLm7ayvc66xNMAIG3UFR2iKUdjOGTHHCulJ0I7QXbOFyF8kK8qUoVSapVOYo/DzNk9Xo51iKkAF2pEZJHM1eAoTYRkfaEmQn02NGymNE12NF2sJT1HP3JaOmiWK0xwN2LkCwDZ31LSAAAExklEQVR4nOWbjVrTMBSGt6OGjnYboiKwwUB+BVFAxv1fmied1gLZlrZJzs/eK+j7pP1OvybtnfY2jPG3/Y/U15AUyPO9L9QXkRKAYnz2lfoqEgLIAE4/U19HMqwwFIPzfeoLSQUsGOanG5Jd8I/x7QX1tSShEobh7kbENdTYvbzQf1/XhTdiJr8Qxrg+0x7X8IocrnTf1q+FocjhhvqiYvJGGJWvNS+yQxhnsuK4dgprjmu3sOIKtURYb4VaKqy1Qi0XVlqhVgmXFUqb8mphGB7sKXuS1whjhfqua5HXCmNcq5rJ64Xx7VpThfIQxif5Vs/btZcwLnKhpUL5CaPygZJF9hVWU6H8hWFQaIjrBsI6KlQT4XKRpb94NRNWUKEaCuNMHsiuUI2FbYW6EazcQlh2hWojjBXqTOxMbicsuEK1FJZbodoKA+R3V9QX34b2wjiThwIrVAdhW6HkzeROwjiTxX3x6igsr0J1FRZXoToL20U+FbTIAYRxJl/KmckhhG2FupLydh1GGON6KCSuQwnD8FrGfnIwYTuTJRyuDygMOQiI65DCGNfn7GdyUGFboX5QG60hsDBWqIL3uevQwqi8y3omhxe2u1CM4zqGMAwYH+SLIowVim1cxxEuD/LxXORYwmwrVDRhfLseczw0EFEY47rgtwsVVRiKa3a7UHGFGVao2MLsdqGiC8MwZ/VZM74wKnOqUCmEsULdsalQSYTtr6tcvnglEuYT18mEYTBgEdfphKHY5XBoIKEwLvIt/YtXUmFboajjOq0wgwqVWhjjOietUOmFiQ/yEQiXJ0PeE0EjnP389YEICmGT3R+N3hFBIJzBw9Z2n4rkwsZMD0dkuumFzWyyQ7e8yYUNzI92KHUTC2ePk23K2zmxsDH3n3a2iH0TCmezCWlaJRY22fRom3x5+8mEDRzT380lSYQN/B4Rh3NFCmEze2KyvP0UwgYwnKk1/xNdmEk4V0QWLosRm9vZElc4g+Nt0jfnt8QUxtnL6m4uiSdsyIuRk2jCDIqRk1jCGM4jdrezJY5wWYyo1dxEEeY2e+tEEGZTjJyEFzbw8MxWN7wwFqMtpk/vgsDCrIqRk6DCOHsZfLVaTUhhzuFcEU7YZHPG4VwRTBiLEeGOkT+BhI2ZnrC/m0vCCPMsRk5CCNti9Ewt4ksA4ezxiWcxctJZuPwoyT+cK7oKZ7PjvpCnd0FH4Wx+ImD21ukkzLwYOekgbGDKuxg5aS9sHsXM3jpthW04y5lFNVoKYzjzL0ZOWgmb7P6E146RP22EpRQjJ82FjZkfygvnisbCQsO5oqEw1x0jf5oJYzHakRnOFU2EmZ3WaEcDYXHFyIm/cDaVVoyc+AobI68YOfETxmJ0Iv7pXeAlbB6fuB3GaY2HsLSvVqtZLyy3GDlZJ2x3jKQWIydrhGn/MYrBSmH7j5GScK5YJSy9GDlZLoyzV86OkT9LhWXtGPmzRFjCaY12uIWzOw3FyIlTWEkxcuIQlrhj5M8bYQxndbO3zmthLEYjpU/vgpfCPH4AjcoL4Wz2oKkYOakJ22KkfHn7deEMJsqKkZNe9fTqDueK3r9wnjxvwPL2/worLUZOrLDWYuSkV85eVV+tVtNTXIyc9Ob9DVpe5A812b1J7AGUlAAAAABJRU5ErkJggg==" alt="Прапор Чехії">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://static5.depositphotos.com/1006206/530/i/450/depositphotos_5308861-stock-photo-panorama-of-neuchatel-switzerland.jpg"
           alt="Швейцарія">
-        <h3>Швейцарія</h3>
+          <div class="content">
+            <h3>Швейцарія</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAACgCAMAAAC8EZcfAAAAKlBMVEX/AAD/////2dn/MzP/Jyf/7u7/BQX/IyP/zc3/8fH/MDD/3t7/UVH/+fmF9n4UAAAA2klEQVR4nO3b2w2DMBREQcIbk/TfbiqIQSJoLTSngOv5XsldJ0mSJEmSJN3VvIyVljnt68q6TT/b1pL2dUP/qtQPaR8gYNoHCJj2AQKmfYCAaR8gYNoHCJj2AQKmfYDPB5Y68OYBcy7DQeW914D7+/jClZV4Wfuj9k8N+NkPD6zLBeC41V7/T9t4BTjdD5wAAQEBAQEBAQEBAQEBAQGfCmx9+mh+PGp+fjtRdsA8UfMTMCBgOkDAdICA6QAB0wECpgMETAcImA7w8cDmv5A3/wlfkiRJkiRJz+0LvOMdhfc990sAAAAASUVORK5CYII=" alt="Прапор Швейцарії">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://static5.depositphotos.com/1000128/394/i/450/depositphotos_3949060-stock-photo-panorama-of-stockholm-sweden.jpg"
           alt="Швеція">
-        <h3>Швеція</h3>
+          <div class="content">
+            <h3>Швеція</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAACgCAMAAADUx0IOAAAAKlBMVEUAaqf+zAAAaKkucaDtyCroxTE9dZ0AZas4c54lbqNQe5bpxi/vySj8zAt8fnxkAAABP0lEQVR4nO3ayxGDMBBEQRmbP+SfrjPAB5YacPVLQFN91bZWWjf0r8P6oat98WYBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQHrjpQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA7gzQlTZOvwCmsfbFs7V3afOyHgOsy1z74tnap7ZtPwbYt+IHz9aO9/5/ANID0gFID0gHID0gHYD0gHQA0gPSAUgPSAcgPSAdgPSAdADSA9IBSA9IByA9IB2A9IB0ANID0gFID0gHoPi3+Xnf47XnBg88kKg9OHngiUzxxdHzjqRqAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAID0xksDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANwY4AsbKUqJ6vTKMAAAAABJRU5ErkJggg==" alt="Прапор Швеції">
+          </div>
       </div>
     </div> 
     <!-- Закінчуються -->
@@ -283,92 +388,127 @@
       <div class="card">
         <img class="countri"
           src="https://st4.depositphotos.com/6268724/29908/i/450/depositphotos_299086880-stock-photo-baku-city-the-old-town.jpg"
-          alt=Азербайджан>
-        <h3>Азербайджан</h3>
+          alt="Азербайджан">
+          <div class="content">
+            <h3>Азербайджан</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAABkCAMAAAD0WI85AAAAdVBMVEUAteJQni/vM0D///8AvOs8pC7HYnvyLjryL0DLWTvvMT7vLjz96eruHC797e7uHzDuFSnwOkb84eL0f4X++fnwPkrxABz5ubz+8/P0io/6zc/3r7L4tLf72NrzdXz5w8b3p6vwSFPxUFr1kZbyaXDxX2juCSIUEIkOAAACA0lEQVR4nO2YzXaCMBBGU2kbmwhJkICC4j/v/4hFQGnV7jLnhPS7S1gMl8xkkmEMAAAAAAAAAAAAAAAAAADgn/EeCOwzEBgnI85zbg3P85guxgib0SCVqYt0kSSLtKiNkkRhRohElKlW0Z1VZRRNnBESEaHWg0aWllW12SartRIUkUYoRERTDUuxv/BGt9i6LBtaEwIRwcteY6NjKYZHzaWypCYEIk3Reyzjn1/O7fla8WQy7kXUsq+OWv9+LjoPQ7V/OReRh2RYj1dv4x0nWhPnInrfeZTN4wvZNhNxSJaqrRjuOqp7ESGzLrGOjykkjvujVuuo5NqeavcmrkV4XyHbpwVpsyor2v1sdTgtMu0+v1yLqE1fIc+/XNqhR0bRiaDPOxYRctt97eHF5hRvhja5MAQF71pklrz+VKFyuxtE0nOune/CrkVMV+vpY+MTbWWMh8goK86uTSDymiG1kqdz1eRSK5RiD2b7vTXE5xPK1BpiMEeUYA6N4Rzj7xer88QvVn9fdS8Tu+r+OXyg6B4jNOOgW+u7jYPMJMdBDwO6oiq2SbamKvIbVCNT/ntkKqc5Mp1dF+XHEHtGPS9tYXMyuG7m1s4bzelijLCvQGAfgcDeAgEivgER34CIb0DENyDiGxDxDYj4BkR8AyK+ARHfgIhvQMQ3IOIbEPENiPhGMCLfsv2C1lm2MW0AAAAASUVORK5CYII=" alt="Прапор Азербайджана">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
           src="https://st2.depositphotos.com/1787712/44915/i/450/depositphotos_449154566-stock-photo-mount-ararat-turkey-137-viewed.jpg"
-          alt=Вірменія>
-        <h3>Вірменія</h3>
+          alt="Вірменія">
+          <div class="content">
+            <h3>Вірменія</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAB9CAMAAAC8h45vAAAAD1BMVEXZABIAM6DyqACSEUGhgTV2VqtPAAAAe0lEQVR4nO3PAQHAIAAEoZ+uf2aDHDRgAwAAAAAAAAAAAApu1r4s9SL1IvUi9SL1IvUi9SL1IvUi9SL1IvUi9SL1IvUi9SL1IvUi9SL1ov1ZO1nqRepF6kXqRepF6kXqRepF6kXqRepF6kXqRepF6kXqRepF6kXqRepFD2YofvWyLjjfAAAAAElFTkSuQmCC" alt="Прапор Вірменії">
+          </div>
       </div>    
       <div class="card">
         <img class="countri"
           src="https://st4.depositphotos.com/18241762/20258/i/450/depositphotos_202586036-stock-photo-downtown.jpg"
-          alt=Ізраїль>
-        <h3>Ізраїль</h3>
+          alt="Ізраїль">
+          <div class="content">
+            <h3>Ізраїль</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANwAAACgCAMAAABQZPIJAAAAeFBMVEX///8AOLgAMbcSI7Q5U77r7fcAALDU1+7X3PAAK7UmOrgAM7cANbcALrb5+v0AILMAKLUAF7IADLGHlNTl6PWKj9Bebce+xeYxP7p5hs5pecrw8vlwd8qBjdG4weXL0etYYsOSndg5Tr1BWcE0RLuhqdywuOFMXsK66EWgAAADJUlEQVR4nO2dW2/iMBCF44RLQkgCIVwKhUCB8v//YTOTslKB7q5QI3eOzvdQOcIPPprYx+NLGgSEEEIIIYQQgksETOCAoTirUJxVKM4qFGcVirMKxVmF4qxCcVahOKtQnFWwxYXABD1ggj4wvhe8CSFdUlW+W9Ad+Xye+25DZ9RFUftuQ2csomjhuw1dsSydK5e+W9ERq9S5dOW7Fd0wm8hMfTLz3Y4uiCVwErrYd0t+nvwlaZOs5AXPDpZt4CR0cGPKZi09LhWBk/XGd2t+GLEBF/Z6ocOzg03WxGzslsvmj0szrNDNpk3EstcgeM2awhTKDqpCLa4xgVjNrkDKDjRexVaK2+IzhijsRk1PG0fqb3kk5dHOd5ueIY+Ht8T1Xvw7OuhP8SESJ9/XDyr+enefD+4oM3XvqH2K9CEr7+vNfbf9n2ze0ufWvtM3AwaxHDwnbmDC2o/JM9qSo+92/xfVVFs7almN9Z0bfUHf3PHq80mrT21YX35QK1vXcUN10AnzKf7CSSfQh0rK9VoiXRx+/VDZEvcysTJd6MovMlUe3NjaTvpleFE9tZhg1jOTwp5F0GSRX4vJ5bbGRaIVnptSvphcizbYqGuXTbjio+Y4w9saQ82Ajk24dlJK9gZs4MpO+tR4EORz6X7F7K4/5TP9YZ4HAxlwUlOzsVcdJGZ1+F1/avtlWKvIxNY8uirVABaiMXvYn84yJ0sWagqlDRv4g2anLtNB8eH2bV+HUZ11mstd+6vwOvV4f1zj/TqRCVfmNq937TzFZXc2cOXSJgtuamo0Ufq6lve3/tT2SzdZmwtckx2cZJCPtt/X2EpqNz6ZyAZuQBYH/VoiDyjQVoBs4tDTL+SJM3LKA52sIi8zIC8QQS/tQS/KIi+nI2+EQG9hIW8+Ym8bPwJlw/8xyEc1sA/ZQB+Pwj7YBn0kEfswKfQxYOwD3NBH77EvTWBfd8G+qAR9xQz7ciD0tU7oC7mEkAD7kyG+P8jSJdif6Xlu7dsGFGcVirMKxVmF4qxCcVahOKtQnFUozioUZxWKswq2ON//AK9LfC94E0IIIYQQQkiHfAAVQXdxO/jqigAAAABJRU5ErkJggg==" alt="Прапор Ізраїлю">
+          </div>
       </div>    
       <div class="card">
         <img class="countri"
           src="https://st4.depositphotos.com/27924062/30478/i/450/depositphotos_304782078-stock-photo-aerial-view-almaty-qazaqstan-kazakhstan.jpg"
-          alt=Казахстан>
-        <h3>Казахстан</h3>
+          alt="Казахстан">
+          <div class="content">
+            <h3>Казахстан</h3>
+            <img class="prapor" src="data:image/png;base64,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" alt="Прапор Казахстана">
+          </div>
       </div>    
-    <div class="card">
-      <img class="countri"
-        src="https://st.depositphotos.com/1035350/2322/i/450/depositphotos_23225970-stock-photo-busan-south-korea.jpg"
-        alt=Південа Корея>
-      <h3>Південа Корея</h3>
-    </div>
-    <div class="card">
-      <img class="countri"
-        src="https://static5.depositphotos.com/1002539/429/i/450/depositphotos_4290023-stock-photo-alanya-turkey.jpg"
-        alt=Турція>
-      <h3>Турція</h3>
-    </div>
-    <div class="card">
-      <img class="countri"
-        src="https://st3.depositphotos.com/16149430/18800/i/450/depositphotos_188002672-stock-photo-skyscrapers.jpg"
-        alt="Сінгапур">
-      <h3>Сінгапур</h3>
-    </div>
-    <div class="card">
-      <img class="countri"
-        src="https://static9.depositphotos.com/1062377/1126/i/450/depositphotos_11265624-stock-photo-surreal-view-of-yokohama-city.jpg"
-        alt=Японія>
-      <h3>Японія</h3>
-    </div>
-
-  </div>
-  <h2 class="Ncontinet" id="America">Країни Америки</h2>
-    <div class="container1">
       <div class="card">
         <img class="countri"
-          src="https://static8.depositphotos.com/1003352/1061/i/450/depositphotos_10615054-stock-photo-mount-fitz-roy-patagonia-argentina.jpg"
-          alt=Аргентина>
-        <h3>Аргентина</h3>
+          src="https://st.depositphotos.com/1035350/2322/i/450/depositphotos_23225970-stock-photo-busan-south-korea.jpg"
+          alt="Південа Корея">
+          <div class="content">
+            <h3>Південа Корея</h3>
+            <img class="prapor" src="data:image/png;base64,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" alt="Прапор Південої Кореї">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
-          src="https://st2.depositphotos.com/5648852/8240/i/450/depositphotos_82409274-stock-photo-new-york-skyline-on-a.jpg"
-          alt="США">
-        <h3>США</h3>
+          src="https://static5.depositphotos.com/1002539/429/i/450/depositphotos_4290023-stock-photo-alanya-turkey.jpg"
+          alt="Турція">
+          <div class="content">
+            <h3>Турція</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMMAAACCCAMAAADMpYxRAAAAeFBMVEXjChf////iAADjAA7jABHjBRT+9/fiAAnuc3f97/D4xcj96OniAAT+9PTwhYr//P3oQkn62tvmKzT3vsHym5/ufYL84ePpXmLzrrDoPUX4y8zzl5zyj5TudnzrUlv1s7XkEh/qSlTmNT3tZm3kISrzp6noV1v609V0vyrlAAADfUlEQVR4nO2ba5OqMAyGIW0tyEVE8YIiqIj//x9ucdmzS1EX3COUTp5PuzPOmNckbdKmhoEgCIIgCIIgCIIgCIIgCIIgiCYwwsHlrgA4YUNb8wIEIA/WVuQLImsd5C6QoW3qBsDWT6dzz6zw5tONvwUYjTeEC5LYmZgSEye2AEYRVIQHO0+2/4vZPmDKhxSDYOc8UlBiX7aKRxSFZP5MQck8Ujm7GafT2aMoKqn+TEMY2tRHMLq+F0bOPPUPIRVrax5Y6XUllDiFqvEEkd38+eNdkQFwygRUrFg82C880064iiIY+I3l1JyeQ6hbywjkxdKcRQp6gpF9wwerQDjgzkc5hAvTV08EjWQv2LvMffRpAskqUi2x4SDngrO+54MvGBzTs1oiKMgSrsEvFvLQD56I7B1GFnIy/74F0OzYh21tAV/a2uLTw1T4hmXZ2y1rDdlKBYbXRsJPhl+iyLIuYbLumK0sf49h7SEnqdZedm0S3CQZeI2CXV3CPOxal0LinPhbbGsJcyU3dF/3wZrFxpALLfjSztA9LMCamJcBE5vx+K9uuGnwrJ/RRHv1Ctmu6tmQd//6UoPpZFUaidIWwuA/m/n8+6X9bfdCo3nTYMYuK93qilbp6hQ99quMburb2yuV3KcGcw8csmI3Ff/0WtSyvF4qXU8vRHKlwV4Hl/jWzl56bfNIUE+HxSuHYJUG06tWacftNaV5UU+HzQtBQL80VNjHjuXWH3HPNQkTv6sG0Znm1uLnDzHb93z+5CZSSnf5CRnlAId0Vd/op1nPWzZEte+3D+3rHgZGWCwbhyH/9onekCoNO2htAMuT9N6ZWtF7CauFBg1iSYec1mFt1WGPa9QadHy1BsunNQ1jrPkMevlDUlcMXHvr0AM1etFVOL5eVIczAXmnHuPZTPOMzBrfGZkOZ5UG1eDMWIezey3uUMTSNPq7LC3uFHW42717x35+VkAzOG4Uu2MXeR3JA3Des1kH11dv1kGkhHQd9Dlzcs8Xovs8KTlzIqKjMXXycPbnoubsj3F/BsuszWBxAHJUeAbrySzcIjqcqOsa+dFK52rPwukwk2joMBtqlJm9fT6j6yxVn9E1fp2V3lK1nVAhWnrr8cz60Na1Rn47YI/t7cCN6g1HUr7hSMo3HGNywTflWxpwR/yWBkEQBEEQBEEQBEEQBEEQBEGQ9/AByS43PZfJrLAAAAAASUVORK5CYII=" alt="Прапор Турції">
+          </div>
       </div>
       <div class="card">
         <img class="countri"
-          src="https://st2.depositphotos.com/1585997/5302/i/450/depositphotos_53027757-stock-photo-mexico-city-landscape.jpg"
-          alt="Мексика">
-        <h3>Мексика</h3>
+          src="https://st3.depositphotos.com/16149430/18800/i/450/depositphotos_188002672-stock-photo-skyscrapers.jpg"
+          alt="Сінгапур">
+          <div class="content">
+            <h3>Сінгапур</h3>
+            <img class="prapor" src="data:image/png;base64,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" alt="Прапор Сенгапура">
+          </div>
+      </div>
+      <div class="card">
+        <img class="countri"
+          src="https://static9.depositphotos.com/1062377/1126/i/450/depositphotos_11265624-stock-photo-surreal-view-of-yokohama-city.jpg"
+          alt="Японія">
+          <div class="content">
+            <h3>Японія</h3>
+            <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQsAAACyCAMAAABiORppAAAAhFBMVEX///+8AC28AC+1AAC7ACi6ACS4ABG4ABbz3eCxAAC6ACC6ACK7ACq3AAfrxsvfqaz25ee5ABv46+378vXv0tblsrrUfYnenabGRFjBNkT9+fnVhI3alp3nvsG+Hjfw19rOb3e8GCvEQ1DLZ22+KjrHUlzVi43RfoLcoaLReH/itLTEO1Fo5ZZnAAADcUlEQVR4nO3d2XaqMBSA4WKYBFGKUkccamun93+/A6WepF1dHZQQYv/vyuUV2SvZSSDD1RUAAAAAAAAAAAAAAAAAXLBxOBkWeTGchGPTj2JQmN+8iH5fHJU/X27y0PRjtS6dzsrS+5HTKzmV1x+RX/47m6amH6894XLXF2UYnM+UARH93fIvVI9FNpqLxP08Dv/j4SZiPsoWph9Wq0W49EX8dSDewhELfxlebjTKSAjxTZVQK4cQFxuNdJWIwQ8DURuIZHWJeTQr1r+MRB2NdZGZfvSmbbbC+2nrUPU8sd2YfvhGjYsoOSUSr9FIouKChqThQbgnRqLiisPFDDc2M3FqpXirGmJ2Ie1k2PPPC0UZDL83NF2MJhRBfGYkKnFQmC7I+Z79c1KF5Poj00U502IUNBOKMhjByO5B6ChqKhRlMCKra0a+8xoLheN4u9x0gU5X3DUZijIYd9Ym0MltEz2IKr6dmC7UadJ9/PvJ2NcG8d7Oeeth11zePHJ3B9PFOkXecLKoeXcW5s/NfaQhFI4T3ds3NTk0nixqg9i6VpLPdbSQije3rJVk22tNoXCc661db/2mg+b7kCN3MDVdvN8I9/qqRVkx9ja95nrUlDhrg/jRdAF/Lt0HGkPhOIFFFWPk6csWFdezZvaePfhaQ+E4/oMtXUmhbWxx5M1tmbw/Cs2hcBxhSfbU26HWbOlW857ezFlxe3YMxFtoIrY0knSrd3BRC7Y2vOAaau9FKt7cho+KeRtNpGwkFiSMRSvpokoY3f+Klj7pHnTW/KfuJ4yJpvecH0X33f9UMly3kTrL5LnufvIs2mkiZSPp/pTkuZ3UWSbPZ9NF/U5b3YgNHcl4lbQUi2TV9ZWO2bK1fLHs+vuctoYXNgww0qc2ZmaVgFgQC2JhfSzInUf0qRJjLYkxuIK5mcScXeJdjsQ7Pol3vxLfBBR8K5L4hijxbVnBmgOJtSgSa5QUrF2TWNMosdZVwRpoibXxCs17JjybNtOwl0bBHiuJvXcK9mQq2KsrsYdbwd5+BWc+SJwFouCMGAVnByk4U0rBWWMSZ9CpmjubsPvrLb7FmZUKzjJVcMatgrOPFZyJreKsdAVn6Ku4W0HBnRsq7mJRLbKcO3oU3N30Dnd6vcddbx+93gFY/PU7AAEAAAAAAAAAAAAAAAD8Af8ArkZUeWepimsAAAAASUVORK5CYII=" alt="Прапор Японії">
+          </div>
       </div>
     </div>
-    <h2 class="Ncontinet" id="ncountris">Інші</h2>
-    <div class="container1">
-      <div class="card">
-        <img class="countri"
-          src="https://static3.depositphotos.com/1006075/226/i/450/depositphotos_2265888-stock-photo-sydney-opera-house.jpg"
-          alt="Австралія"> 
-          <h3>Австралія</h3> 
+    <h2 class="Ncontinet" id="America">Країни Америки</h2>
+      <div class="container1">
+        <div class="card">
+          <img class="countri"
+            src="https://static8.depositphotos.com/1003352/1061/i/450/depositphotos_10615054-stock-photo-mount-fitz-roy-patagonia-argentina.jpg"
+            alt="Аргентина">
+            <div class="content">
+              <h3>Аргентина</h3>
+              <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAAB8CAMAAAAb3Q/PAAAArlBMVEV0rN////9rp93a5/X5tw72tA769vPZto3z6d/kzrnu4NPs28v48uzw5Nn8+vfs3dG6f0DMk0jHlFvGgA25dSjfmwvvrA7aupXNn2/XtpjbvqXKllTatILVmkHiybPYr3zSkCDKmmbl08fLpIPLjTPfsXjSomvKkDrkyarUljTOnF7FiTjEgyfQjAnBhkPDexLbplauZBeoYCLSqYHToFncq2TJiB+2dTS7dx/JnHT3g8RgAAADkElEQVR4nO3aXW+jOhAG4M4egjEm5AAhhJjYNIWY8BG2TZY2//+PrUlv9tztxY72pJpHlSKlF6NXwfYw8PRECCGEEEIIIYQQQgghhBBCCCGEkN/27Yt4+ueLeIIvgoL8Nhc8DyDELoMehAnIMvBv2HVQgwTbJUQcGAOmYLkNMGshBjm4kO/gooEVoBXscnB9vCsMMciLAiFdr1oWBdRZKAVsX1y0alhBVh7wisNRuUYURbAX/BgKE4K3QiqIFcT/1wc1iMaERmgtJtc0cGWwsl/jwAkShsAlB/3jcFI2SFsX/LRkpSvsl0hwgogcQEU8mISOJGujjh/brBQ8sssmP6CUxAnixTJ3m1Lpq0riqOuq7XRLOC8bWFU5zi6MEsTuTbv9yW/K56rt1uve/nW9zsvMzYbm/u8/DyVIrOySrkvB+vP4PibW+NbLPmbT9wZ8FWPURAkicqm5XdyFXL+mG8fapK/rcxXxFddRLjBqIm2/7m7aH299/5o6izsnfR0lv+yrDKlRQQgSxFzlwlXt1L3ZHJuNzbGxSd7PicmCMMgijbBKMH4RcdH1qWJ824+bRToM6SYd0sVm/IhlZExVK47wq2Cd7B6/mmqdOIskGawkcZxkbQouBNLRjhDEzxgrCi2jbj04TjomaTqMqeMMH1GrdVEwliGEwQui2+hjsEvdZkkX8+ew7iL5SEFmvhBcm/nSsgs9tUlskGRddS33cAqi7Fpc1ZUxURvPi90GGYb7x/ix5aw61fqCcZAgBHEvct5lczN27/Mx8hnESd+6qVWu2CkeP86uFdgDUSs53g/E+cqyB2Lf3477aYd0k4jWoqgDj7rzry2KvCRsybV8oBZlbhqb7xN7tp3i22fT+D6eeybKGh6qabRXTzPYnr3MtelsE291bfVcNv5pv3ukNh6CvFpBU3I+3aZt1dnzI1H2aisbt7nGOBswTpCDXQf2VpeXWXvkdiNmMtJiCuZbXcBZInhzLS5FULLlieu61SJSp8MPfZ9IhDhDOrxx0ArYFRrjTvM4yISmEYO6T4lwIA7oQiPCIxf7oCiEcfnxPrF7uAGd3ZtetiBkmNVQFMvKc6VdNi9o1RCDhP59iK00FAz05T7Exhlp3aE/VlBsfqzAowd+rPBp688PegTDroMexG62nodzmP8HPQz9v/k6Lwz87Vcv/pS//SoMIYQQQgghhBBCCCGEEEIIIYQQ8kh+AoRzdRHIY9H5AAAAAElFTkSuQmCC" alt="Прапор Аргентини">
+            </div>
+        </div>
+        <div class="card">
+          <img class="countri"
+            src="https://st2.depositphotos.com/5648852/8240/i/450/depositphotos_82409274-stock-photo-new-york-skyline-on-a.jpg"
+            alt="США">
+            <div class="content">
+              <h3>США</h3>
+              <img class="prapor" src="data:image/png;base64,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" alt="Прапор США">
+            </div>
+        </div>
+        <div class="card">
+          <img class="countri"
+            src="https://st2.depositphotos.com/1585997/5302/i/450/depositphotos_53027757-stock-photo-mexico-city-landscape.jpg"
+            alt="Мексика">
+            <div class="content">
+              <h3>Мексика</h3>
+              <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHcAAABECAMAAACMCVq7AAABgFBMVEUAaEfOESb///8AY0B6no3de3/NABn8/Pv5+fng4dLv8Ojf19LMu6/Xzcft6ur8/P24kmOTViXIkVGobTOTTx+hbVfWzcvx8O7MtJnd0MfMsZ6leEuBTB6IPBpeOiV+TCmXUBeth2TMy67/+fHEll+veUG2g0S4jFa3tbKeaTlaLhtQMR6CWzZoTy6kdl/FyKfX2cLOnHGcWjh2ORiwcTFvOiJEJhqOWDvz4bb1ymLYoSTRuJXMnFqHVi57Th81HxZdMAuoh3zpzpDDpk3v5NhyTCt3PASvrYTaybDKqYHsyXz06tHTzKVjJwCDXUWPbFpvQC6vpaEwDQCYgnvgsT1CLiBFGwB6Y1t+d3KQlV385eLtcEO3iC1fRi89DgCan29+hDr9tcHhwMbAq16aimKgUwNXOC8AbXNNmp3zyKubvL2y09P8n69mT0R9nqCDgo32vCL/09NAgYNwbkhNxd+a2emfsaPG1+aGvdFvq63+ozr/5J73pUxJqrqmtpTKjoqZ2CCGAAACnUlEQVRYhe3XW3PSQBQA4Hq85FZCWyppSwFJBEJAE0tBesHSFhpLUttoL4CXpFqblCoqgtiWtn/dqDNOHV942Yyje2aSh92Hb3bPOTu7Q0MDxfUbMFjcvHVtoBiMxS52sYtd7GIXu9j9v1xm2Md67/pHRscC47eD3rrcxORUaDocid6JcV65BC9wd+OJpBhPSenMvfukR66scA9msqnZXCAezmekyEO/N64iF+bmFwKLxUfx8FImK5WWvXE5ZWW1UE6EcpWZXCYi5XJrjFd1pT5eX0xJUjgdrUSL0SsLRuYSVQ1olSdTqWI6H8kUk8VMpjgdRL/egk6pCjCJeCKb3xkfrUQfjaY2PHCBUky3ZQOJULpSjA0/2axsRbYMD1yeVuPVFXEtUgmFnpI+0TA2nyF2KRM0gZOpyYXtcrQSD+3sGsCKe8s1FjgZnUvUZWg8B0ouzL+orkdf5tO5VzUA0aiRYFoUMpd2XXL/NSe/OThbnX17mM1JUqnEkEGDhLpFo9vngq5B0HZYOGr4p3zM3u7SrlTaMFjRr/EawvwKOgBr283jdw3SrWnu/UHwUDqsUWUAHaVLmioNTMuxPzQdpyXObX+s0iT36QgoS6ZR9pFqKe4/2G63bdt2PpuOaTTb+3533ETav7SpanCm+Nleq207J67ufk3Q+J/VjO7c0HSFA67T7QhHZZ/T4qD5JQgEoQuIzytBuFCp3tdO5+S0P2b3xW737EfWUbvfU6wKIHTPT/v9/ul5pweCaVm/rjroXFo2daJAsrGRZDLGkAzoqkoBehfgjFfNOsUd93okbVkXmnZlDul9g+bVel2+MCYUy7J4ILxyXZkmKPHychIU8vcJ9O8FskEc+/8Y/ZffZdjFLnaxi13sYhe7f7P7DfFCmPvX2DXMAAAAAElFTkSuQmCC" alt="Прапор Мексики">
+            </div>
+        </div>
       </div>
-      <div class="card">
-        <img class="countri"
-          src="https://st2.depositphotos.com/3996371/7407/i/450/depositphotos_74074793-stock-photo-auckland-sky-tower-city-harbour.jpg"
-          alt="Нова Зеландія">
-        <a href="Нова Зеландія.html" class="btn btn-primary" target="_blank" rel="nofollow">
-          <h3>Нова Зеландія</h3>
-        </a>
-      </div>
-      
-      
+      <h2 class="Ncontinet" id="ncountris">Інші</h2>
+      <div class="container1">
+        <div class="card">
+          <img class="countri"
+            src="https://static3.depositphotos.com/1006075/226/i/450/depositphotos_2265888-stock-photo-sydney-opera-house.jpg"
+            alt="Австралія">
+            <div class="content">
+              <h3>Австралія</h3> 
+              <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAB9CAMAAAC8h45vAAAAolBMVEUBIWn////kACvxf5XrP1/r7vM7U4vEzNyzvdJDWpAsRoKrts75w83rRGTqO1z4u8bnHUPzkKP+9/j1obHoI0iIl7npK0/2q7kGJWwKKW6ySHC8xdgWM3W5Rm2irshwgqpOZJbx8/dfc6AZNnfO1OL0l6k0TYeRn77a3+lneqWZpsNXbJx8jLHS2OWHl7giPnzuXHf96+/72uGmWoCibJCecpYx2/J7AAAGIElEQVR4nO2de3ubNhSHUVZwHNIm7epWzAxzKwYbJ9uyff+vNkk2ARwQRwKL6+8PEz+PLue17tIR0b48oYJWaw0gnYT8dJfrE/muQyIa9wh9+/37JdqXJ0ic24laIAoviX4NjlB789sos0IEXgr9I/gQ0InxjyLwEugM/NfzXTm77jBkdG0NBF4YvRq8b/TrOphpa9THEUQ3th+r+hDQ66zilbwQelUbHwY6z7I6eAF0meTVSdw6MPqwwalELQSiDx+cSsxKEPo4wKlELAWgjwecCm5tI7oa8KSrhDS4xQ3oikrc8qzO0tKgVnPRlVX1Izp2mJoGs5yDrgT81aflbSKTfFr+a0epahDra9FVlbjpOWvLQ54V7XWzu2S1ZoIadHW9uk0soEbQh91lwloTRSW60uHMfU+64/ZOxSNBFehI7ThuXtJuU90fauWTtSb6+fnHWX89NqHXBA39+iykrfb1S+r6Dksncl2aUFWUurgkbY5WxZ+Ws7EwNXSceqVEvFSy4MeHTmQ90J0fRPeSHuSndKNEJyJ13iM9aIsUtLs+1cJuHYXBCnbwMTF0C51szQpRmxXMSNGjOCCf9kl+fBwvesAeQTQ/9C60oC/oC/qCvqAv6JND/01SzwWCZ9lEbocVAMKMdeXGl32YLXriAbYvpoZ+XsrdI7YVirk/gFmvrV408+/Hn2c9/cNHLwfUV5wcboBuhIlFlrSI1PiHjSm3dUV3o3M9fs66tK/fGku9HFjxmfIeec4L+cmTEHlSS1oe+MqrQPd4EVTCW/G7FTuJ6Fzwdc3BU0MkZTIyE1bi1b2Roe64sWt4uZZqn2QLHWB//SFzp/CWTIXND2YQ2gq1dZDtPNeCDuHdUCg4U+lgBqE9eNsSaDffoaQzeAcJew1YSXowWTeMULx19ikwP7DNTW5EreHdxCYtXWet1dgIbzifq3wKDi9gb7PzWEt4HCLTdUnQYHcSP0EnExrdYZMakIRshbgMtoN/yKM6QIJcEfIM7YC2oMCCdsIcRVvBp1k8CYeRo0dSx04MCCpsI9Q9uAU8zuZkPgS2rJ3LUjAb+wgJ++BO4bLwgfNe6uJuE5d6gpvQt/W21V6EELkKYPAyqImDd14hjrzbRIPEwUUvgHDgqyPYTlxcLuuh25KxRrlNGczzr6amKHrt56ra5xnVR8HBZXDu1A+2LJk+SPyyV02b58SwEPMI3EggQSUOLnfFrxKeE56M7Kkdt/KLa5I4uOzFzgp4TmiXTkSDWGIFA5bMFFv2Ou8HeE7Y3Z5+vkLmJbL698+L3jZEsHFkl6bp2x+53sh32Nra2BT1Hy/k+QH1DbNu2B0OXEmXt0HGpfDUtwX9CNtkgeva8o7Co1WSdZwzrPRHNuX3bnArYPg6UvRZkp83NuB7cVPSve678X3fVvQhTDdtrc0Me/hFi1RpngMKlaXPdsHkIrdnC3qTI3EsNA1hHUH806aoNZk+Du6VG2p0QPCj3PELv7jvVRyz2/P5V/dl2rXfQPohyv6kyvYPNzq61eHYULQhuKeUnmbuGTrdNLYT6r1zy5OSQQif3dLuj5cj8BivHbZLEk9/epN5I+pXz6lXd6oXVKWXvs1SIXyqIJ9BdacyKtDnUN2p9vOs7lQFn/NZVXcyjH8sdafr9yENU77+gbzdu3HGoiu361w3c/IaiCrqeqHWQ+4Udqc2L2sQFk6q6nou6RcDSRkTKswsqprLlHVSVxSG0rmEFUSun+6d7alc+vqJ3jjw3ShQMsgFbDjZs0WjZqttZST3Erri3HFouliLUaxh4xCqnlKU57Kq+3aSe8x2x+IeZtB+CV3Cab2d8nFmrzprtldD2vjx3OaV789YWYfbwwyauep7kRZ5bEBXnX2QOZpvVXdymhZScroHb1D2Vq99E1fxqoDSqQQTregu+2vtAf/fTWdal6cXsas0dxvlHkv0na4q123YoHOLy54onU0YSss9KvbqpLdXOp1mOjf2HlyHjiXPRL8Hn7UYeYmHbukzXqO07KS2U+6zhmknS7pY9ZsE1xfD27znUEqvyNVoF9vhG9LHovW5ibkzPOPGV89FixYtWrRo0aJFixZNXv8DqW6MnNRQjA8AAAAASUVORK5CYII=" alt="Прапор Австралії">
+            </div>
+        </div>
+        <div class="card">
+          <img class="countri"
+            src="https://st2.depositphotos.com/3996371/7407/i/450/depositphotos_74074793-stock-photo-auckland-sky-tower-city-harbour.jpg"
+            alt="Нова Зеландія">
+            <div class="content">
+              <h3>Нова Зеландія</h3>
+              <img class="prapor" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHcAAAA8CAMAAABreNUXAAAA51BMVEUBIWn////IEC7ICyzGDSP++/vEAAAAHmgAAFvHACX5+fv24uPWa3IiLG4AAFEAF2YAAF/W1t9dYYoAG2cAEmTEAAgACWIAAFcADWKprMDGABwABGHDDC4bIWf/8/LFABXEzNmCh6WHFkzttrfUXGT739/46uzx0tRiaZEXJ2wkM3FsdJji6/HZeIDooqWim7C2v881QXjqrK/gl5yforlKU4LehovJJzbejpSOk6zauMA8SX3fxs3aSVDNrLjda24AAEHQT1oAAEnNNkTxw8TQxtHpgoa6tcWRo7yhi6DbWl22obPao6mhI4kEAAAD2ElEQVRYhe2YbVuiShjHRWQYHziMwahoiaxGIEZqmKmd2t227LT7/T/PYUAUYYbcXN03/l/UdTHAr//N3A9TrnLJEWl9JOZiks+4Msjn88UKV4XxhZwKnUH5uqAX3ZtG7vPCuFcOyVKczOKqyBmYFR3zrsBptT243SIGlRVZ2ZDpXLnuDNrXAOs+lduPO+TG+Q157ZnGJREm1OJtcPPAkvfgolGHG/MYR2Q7JKe5KrR8qu5ThYBqoH2wuZwCCbmw8SwTcpIr133qnR/hkFoy4D6bakVG/cAziHne5sqBV4ALkdcdqLtEQ4GLDucWsV4xAzeaAmPcOqHe6bh53w69oh28Niwlc10MJZNou00MrkPPXow7GQh+hHFEhS0lfCbTySSR9klJkezGpCrcTvnmdeCZW3O59n2Tn96H33XWEDdPsM3WoNeVWrWMWJfi8t8sCO12ktsWBCG8tnWzx8xfz/Pm70NPy8g0jqk1lyVm3VAWD/8WirrrZeyDAlNF3ufmeeZ68wvzCyuo0wSuhdjYHM9WPhBzufiF/Vb02Os+OVmplP+0MrjKwpz1XzpZfg/ClZ0JUtAsK4MPE2eZIDOrS4Yhfv2DvszeVwkpFOMCS+s8Yt7Azt8EdjJJgw+Rv1sSxdpMQ6mq+s9aX+1h8LofzwAUuhsuqWKc4OoAfLsaGN+/rx9Ibld62vRz4uOc/KLHAvkdiejqG8bPPzjNivWFarDSnfqz2GXJqDH2i0qtirJjupWeaxoqjQpHwxUVgKlPtRN9cEX2J6JeuTSr08iiPKB2oNpiruvzCSWXg4kjohKvcrrvn4Xk8RQA4jnVgdUWssYOalFcwcfK62P6T1LQxisOvFLnHGQNIs/+5Jskq4Z289Ks3mhGKtZi3zQcc5Hc0bC/TZVYc50/w64880G0jXocoSxfMQ9el0oqp5WzSas2Sk0fy02Eu9zQzp5jV55JtJ8uS1v7CL49gcobpJQSUjXSlSOg9gDO+1Tpo7mdnBaCrBqTaf+/+Mes3bxfvXutNJYhjrv0qVOf2t/pnFJ3BlG0t+ozND2kmbtzyz1cnP7a8hpx8fn5OU89l5Epp3Qbr8/iyEEicha7luwclC8upJGNUg9I0kUgSUouqSgY60ZS/KJIPracPbumRJtJo2v0tY/m2JNOOumkkz7Qb1bqPyXR1nbviX9QqvGQdRo8jGTUgsu7CULHtSxbnZ9Ld/ryc6kdt1fWnG6zwOOnpX3kHt3oP4Amfbo8qET71/N9/m2f/xN/SrIz1qz5/Og7Gi0NqIrV0dHjLPmnJ7HFOPMeEnx04kkn/UX9D6fpbzrrt0VkAAAAAElFTkSuQmCC" alt="Прапор Нової Зеландії">
+            </div>
+          </a>
+        </div>
     </div>
   </main>
   <hr>
