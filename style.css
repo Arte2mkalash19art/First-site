@@ -52,6 +52,7 @@
 
 .card:hover {
   transform: scale(1.1);
+  text-shadow: 1px 1px 3px pink;
 }
 .card:hover .countri {
   filter: grayscale(0%);
@@ -59,13 +60,13 @@
 }
 
 body {
-  background-color: rgba(0, 0, 0);
-  color: #ffffffe8;
+  background-color: white;
+  color: black;
 }
 
 body.dark {
-  background-color: #ffffffe8;
-  color: black;
+  background-color: black;
+  color: white;
 }
 
 .container input {
@@ -92,14 +93,14 @@ body.dark {
   left: 0;
   height: 1.3em;
   width: 1.3em;
-  background: black;
+  background: rgb(250, 250, 250);
   border-radius: 50px;
   transition: all 0.7s;
   --spread: 20px;
 }
 
 .container input:checked ~ .checkmark {
-  background: black;
+  background: rgb(0, 0, 0);
   box-shadow: -10px -10px var(--spread) 0px #5b51d8,
     0 -10px var(--spread) 0px #833ab4, 10px -10px var(--spread) 0px #e1306c,
     10px 0 var(--spread) 0px #fd1d1d, 10px 10px var(--spread) 0px #f77737,
@@ -128,6 +129,7 @@ body.dark {
 
 h1 {
   text-align: center;
+  text-shadow: 1px 1px 3px pink;
 }
 
 a {
@@ -137,6 +139,7 @@ a {
 
 .Ncontinet {
   text-align: center;
+  text-shadow: 1px 1px 3px pink;
 }
 
 .form {
